@@ -81,7 +81,7 @@ opam install --deps-only frama-c
 
 可检查C代码文件中常见的运行时错误，比如除零异常、内存访问越界、整型数据溢出等错误
 
-![image-20211010092651940](https://user-images.githubusercontent.com/52147760/136679442-3358a235-16a5-4da1-9e71-4bfb041ecf03.png)
+![image-20211010092651940](https://user-images.githubusercontent.com/52147760/136679503-76d1c70b-7e18-42b2-8625-8022e1f17352.png)
 
 执行`frama-c -metrics C:/Formal-Tech-C-Analyzer/test/max_seq.c`命令
 
