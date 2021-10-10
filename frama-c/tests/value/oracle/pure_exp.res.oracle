@@ -1,0 +1,27 @@
+[kernel] Parsing tests/value/pure_exp.i (no preprocessing)
+[value] Analyzing a complete application starting at main
+[value] Computing initial state
+[value] Initial state computed
+[value:initial-state] Values of globals at initialization
+  t ∈ {0}
+[value:alarm] tests/value/pure_exp.i:8: Warning: 
+  out of bounds read. assert \valid_read(t);
+[value] Recording results for main
+[value] done for function main
+[value] tests/value/pure_exp.i:8: 
+  assertion 'Value,mem_access' got final status invalid.
+[value] ====== VALUES COMPUTED ======
+[value:final-states] Values at end of function main:
+  NON TERMINATING FUNCTION
+[from] Computing for function main
+[from] Non-terminating function main (no dependencies)
+[from] Done for function main
+[from] ====== DEPENDENCIES COMPUTED ======
+  These dependencies hold at termination for the executions that terminate:
+[from] Function main:
+  NON TERMINATING - NO EFFECTS
+[from] ====== END OF DEPENDENCIES ======
+[inout] Out (internal) for function main:
+    tmp
+[inout] Inputs for function main:
+    t

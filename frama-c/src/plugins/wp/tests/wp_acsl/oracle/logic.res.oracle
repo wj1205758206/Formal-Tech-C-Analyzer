@@ -1,0 +1,14 @@
+# frama-c -wp [...]
+[kernel] Parsing tests/wp_acsl/logic.i (no preprocessing)
+[wp] Running WP plugin...
+[wp] Loading driver 'share/wp.driver'
+[kernel] tests/wp_acsl/logic.i:10: Warning: 
+  No code nor implicit assigns clause for function main, generating default assigns from the prototype
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Pre-condition (file tests/wp_acsl/logic.i, line 10) in 'main':
+Prove: true.
+
+------------------------------------------------------------

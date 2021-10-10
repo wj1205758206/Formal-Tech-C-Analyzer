@@ -1,0 +1,139 @@
+# frama-c -wp [...]
+[kernel] Parsing tests/wp_acsl/looplabels.i (no preprocessing)
+[wp] Running WP plugin...
+[wp] Loading driver 'share/wp.driver'
+[wp] Warning: Missing RTE guards
+------------------------------------------------------------
+  Function copy
+------------------------------------------------------------
+
+Goal Post-condition (file tests/wp_acsl/looplabels.i, line 13) in 'copy':
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file tests/wp_acsl/looplabels.i, line 18):
+Let a_1 = shift_sint32(b, 0).
+Let a_2 = shift_sint32(a, 0).
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(1 + i).
+  (* Heap *)
+  Have: (region(a.base) <= 0) /\ (region(b.base) <= 0) /\ linked(Malloc_0).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_2, n).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_1, n).
+  (* Pre-condition *)
+  Have: separated(a_2, n, a_1, n).
+  (* Loop assigns ... *)
+  Have: havoc(Mint_0, Mint_1, a_1, n).
+  (* Invariant *)
+  Have: P_IsEqual(Mint_1, a, b, i).
+  (* Invariant *)
+  Have: (0 <= i) /\ (i <= n).
+  (* Then *)
+  Have: i < n.
+}
+Prove: (-1) <= i.
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file tests/wp_acsl/looplabels.i, line 18):
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant (file tests/wp_acsl/looplabels.i, line 19):
+Let a_1 = shift_sint32(b, 0).
+Let a_2 = shift_sint32(a, 0).
+Let x = 1 + i.
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(x).
+  (* Heap *)
+  Have: (region(a.base) <= 0) /\ (region(b.base) <= 0) /\ linked(Malloc_0).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_2, n).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_1, n).
+  (* Pre-condition *)
+  Have: separated(a_2, n, a_1, n).
+  (* Loop assigns ... *)
+  Have: havoc(Mint_1, Mint_0, a_1, n).
+  (* Invariant *)
+  Have: P_IsEqual(Mint_0, a, b, i).
+  (* Invariant *)
+  Have: (0 <= i) /\ (i <= n).
+  (* Then *)
+  Have: i < n.
+}
+Prove: P_IsEqual(Mint_0[shift_sint32(b, i) <- Mint_0[shift_sint32(a, i)]], a,
+         b, x).
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant (file tests/wp_acsl/looplabels.i, line 19):
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = shift_sint32(b, 0).
+Assume {
+  Type: is_sint32(n).
+  (* Heap *)
+  Have: (region(a.base) <= 0) /\ (region(b.base) <= 0) /\ linked(Malloc_0).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_1, n).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_2, n).
+  (* Pre-condition *)
+  Have: separated(a_1, n, a_2, n).
+}
+Prove: P_IsEqual(Mint_0, a, b, 0).
+
+------------------------------------------------------------
+
+Goal Loop assigns (file tests/wp_acsl/looplabels.i, line 20) (1/2):
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Loop assigns (file tests/wp_acsl/looplabels.i, line 20) (2/2):
+Effect at line 23
+Let a_1 = shift_sint32(b, 0).
+Let a_2 = shift_sint32(a, 0).
+Let a_3 = shift_sint32(b, i).
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_3, 1).
+  (* Heap *)
+  Have: (region(a.base) <= 0) /\ (region(b.base) <= 0) /\ linked(Malloc_0).
+  (* Pre-condition *)
+  Have: 0 < n.
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_2, n).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_1, n).
+  (* Pre-condition *)
+  Have: separated(a_2, n, a_1, n).
+  (* Loop assigns ... *)
+  Have: havoc(Mint_0, Mint_1, a_1, n).
+  (* Invariant *)
+  Have: P_IsEqual(Mint_1, a, b, i).
+  (* Invariant *)
+  Have: (0 <= i) /\ (i <= n).
+  (* Then *)
+  Have: i < n.
+}
+Prove: included(a_3, 1, a_1, n).
+
+------------------------------------------------------------
+
+Goal Assigns (file tests/wp_acsl/looplabels.i, line 14) in 'copy':
+Effect at line 22
+Prove: true.
+
+------------------------------------------------------------

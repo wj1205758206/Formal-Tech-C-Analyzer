@@ -1,0 +1,35 @@
+[kernel] Parsing tests/value/threat_if.i (no preprocessing)
+[value] Analyzing a complete application starting at main
+[value] Computing initial state
+[value] Initial state computed
+[value:initial-state] Values of globals at initialization
+  p ∈ {0}
+  l ∈ {0}
+  m ∈ {0}
+  i ∈ {0}
+  X ∈ {-992}
+[value:alarm] tests/value/threat_if.i:14: Warning: 
+  out of bounds write. assert \valid(p);
+[value] tests/value/threat_if.i:18: Frama_C_show_each: {-126}
+[value] Recording results for main
+[value] done for function main
+[value] ====== VALUES COMPUTED ======
+[value:final-states] Values at end of function main:
+  p ∈ {{ NULL ; &l }}
+  l ∈ {0; 1}
+  G ∈ {-126}
+  c ∈ {-126}
+  __retres ∈ {-126}
+[from] Computing for function main
+[from] Done for function main
+[from] ====== DEPENDENCIES COMPUTED ======
+  These dependencies hold at termination for the executions that terminate:
+[from] Function main:
+  p FROM i_0 (and SELF)
+  l FROM p; i_0 (and SELF)
+  \result FROM \nothing
+[from] ====== END OF DEPENDENCIES ======
+[inout] Out (internal) for function main:
+    p; l; G; c; __retres
+[inout] Inputs for function main:
+    p

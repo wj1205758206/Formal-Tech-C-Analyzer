@@ -1,0 +1,28 @@
+[kernel] Parsing tests/value/affect_corrupt.i (no preprocessing)
+[value] Analyzing a complete application starting at main
+[value] Computing initial state
+[value] Initial state computed
+[value:initial-state] Values of globals at initialization
+  p ∈ {0}
+  r ∈ {77}
+[value:alarm] tests/value/affect_corrupt.i:8: Warning: 
+  out of bounds read. assert \valid_read(p);
+[value] Recording results for main
+[value] done for function main
+[value] tests/value/affect_corrupt.i:8: 
+  assertion 'Value,mem_access' got final status invalid.
+[value] ====== VALUES COMPUTED ======
+[value:final-states] Values at end of function main:
+  NON TERMINATING FUNCTION
+[from] Computing for function main
+[from] Non-terminating function main (no dependencies)
+[from] Done for function main
+[from] ====== DEPENDENCIES COMPUTED ======
+  These dependencies hold at termination for the executions that terminate:
+[from] Function main:
+  NON TERMINATING - NO EFFECTS
+[from] ====== END OF DEPENDENCIES ======
+[inout] Out (internal) for function main:
+    r
+[inout] Inputs for function main:
+    p

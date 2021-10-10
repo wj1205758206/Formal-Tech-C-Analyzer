@@ -1,0 +1,13 @@
+# frama-c -wp [...]
+[kernel] Parsing tests/wp_typed/bug_9.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Loading driver 'share/wp.driver'
+[wp] Warning: Missing RTE guards
+------------------------------------------------------------
+  Function main
+------------------------------------------------------------
+
+Goal Assertion (file tests/wp_typed/bug_9.c, line 14):
+Prove: true.
+
+------------------------------------------------------------

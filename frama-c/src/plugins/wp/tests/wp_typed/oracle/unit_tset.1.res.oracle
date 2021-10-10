@@ -1,0 +1,23 @@
+# frama-c -wp -wp-model 'Typed (Ref)' [...]
+[kernel] Parsing tests/wp_typed/unit_tset.i (no preprocessing)
+[wp] Running WP plugin...
+[wp] Loading driver 'share/wp.driver'
+[wp] Warning: Missing RTE guards
+------------------------------------------------------------
+  Function complex
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file tests/wp_typed/unit_tset.i, line 6) in 'job'' in 'complex' at call 'job' (file tests/wp_typed/unit_tset.i, line 20)
+:
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function complex with behavior default_for_stmt_2
+------------------------------------------------------------
+
+Goal Assigns (file tests/wp_typed/unit_tset.i, line 19) at call 'job' (file tests/wp_typed/unit_tset.i, line 20):
+Call Effect at line 20
+Prove: true.
+
+------------------------------------------------------------

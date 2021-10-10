@@ -1,0 +1,26 @@
+[kernel] Parsing tests/value/bad_loop.i (no preprocessing)
+[value] Analyzing a complete application starting at main
+[value] Computing initial state
+[value] Initial state computed
+[value:initial-state] Values of globals at initialization
+  c ∈ [--..--]
+[value] tests/value/bad_loop.i:6: entering loop for the first time
+[value] tests/value/bad_loop.i:12: entering loop for the first time
+[value] Recording results for main
+[value] done for function main
+[value] ====== VALUES COMPUTED ======
+[value:final-states] Values at end of function main:
+  x ∈ {0; 1; 2}
+  d ∈ [--..--]
+  e ∈ [--..--]
+[from] Computing for function main
+[from] Done for function main
+[from] ====== DEPENDENCIES COMPUTED ======
+  These dependencies hold at termination for the executions that terminate:
+[from] Function main:
+  NO EFFECTS
+[from] ====== END OF DEPENDENCIES ======
+[inout] Out (internal) for function main:
+    x; d; e
+[inout] Inputs for function main:
+    c

@@ -1,0 +1,389 @@
+# frama-c -wp [...]
+[kernel] Parsing tests/wp/wp_behav.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Loading driver 'share/wp.driver'
+[wp] tests/wp/wp_behav.c:172: Warning: 
+  Ignored specification 'for b1' (generalize to all behavior)
+[wp] Warning: Missing RTE guards
+[wp] tests/wp/wp_behav.c:176: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] tests/wp/wp_behav.c:154: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] tests/wp/wp_behav.c:69: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] tests/wp/wp_behav.c:81: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+------------------------------------------------------------
+  Function assert_needed
+------------------------------------------------------------
+
+Goal Assertion 'ko' (file tests/wp/wp_behav.c, line 117):
+Assume { Type: is_sint32(x). }
+Prove: 0 < x.
+
+------------------------------------------------------------
+
+Goal Assertion 'qed_ok,ok_with_hyp' (file tests/wp/wp_behav.c, line 120):
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function bhv
+------------------------------------------------------------
+
+Goal Complete behaviors 'pos', 'neg':
+Assume { Type: is_sint32(n). (* Pre-condition *) Have: n != 0. }
+Prove: (0 < n) \/ (n < 0).
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function bhv with behavior neg
+------------------------------------------------------------
+
+Goal Post-condition for 'neg' 'qed_ok' in 'bhv':
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function bhv with behavior pos
+------------------------------------------------------------
+
+Goal Post-condition for 'pos' 'qed_ok' in 'bhv':
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function bts0513
+------------------------------------------------------------
+
+Goal Post-condition 'ko1' in 'bts0513':
+Prove: false.
+
+------------------------------------------------------------
+
+Goal Post-condition 'ko2' in 'bts0513':
+Prove: false.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function f
+------------------------------------------------------------
+
+Goal Post-condition 'qed_ok' in 'f':
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Post-condition 'qed_ko' in 'f':
+Assume { Type: is_sint32(f) /\ is_sint32(f - 2) /\ is_sint32(f - 1). }
+Prove: 0 < f.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function f with behavior x1
+------------------------------------------------------------
+
+Goal Post-condition for 'x1' 'qed_ok' in 'f':
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Post-condition for 'x1' 'qed_ko' in 'f':
+Prove: false.
+
+------------------------------------------------------------
+
+Goal Assertion for 'x1' 'qed_ok' (file tests/wp/wp_behav.c, line 23):
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function f with behavior x2
+------------------------------------------------------------
+
+Goal Post-condition for 'x2' 'qed_ok' in 'f':
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Post-condition for 'x2' 'qed_ko' in 'f':
+Prove: false.
+
+------------------------------------------------------------
+
+Goal Assertion for 'x2' 'qed_ok' (file tests/wp/wp_behav.c, line 24):
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function local_named_behavior with behavior xpos_stmt_53
+------------------------------------------------------------
+
+Goal Post-condition for 'xpos' 'qed_ok' at instruction (file tests/wp/wp_behav.c, line 112):
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Post-condition for 'xpos' 'qed_ok' at instruction (file tests/wp/wp_behav.c, line 112):
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function min
+------------------------------------------------------------
+
+Goal Complete behaviors 'bx', 'by':
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Disjoint behaviors 'bx', 'by':
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function min with behavior bx
+------------------------------------------------------------
+
+Goal Post-condition for 'bx' 'qed_ok' in 'min':
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Post-condition for 'bx' 'qed_ko' in 'min':
+Assume {
+  Type: is_sint32(min_0) /\ is_sint32(y).
+  (* Pre-condition for 'bx' *)
+  Have: min_0 <= y.
+}
+Prove: y = min_0.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function min with behavior by
+------------------------------------------------------------
+
+Goal Post-condition for 'by' 'qed_ok' in 'min':
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Post-condition for 'by' 'qed_ko' in 'min':
+Assume {
+  Type: is_sint32(min_0) /\ is_sint32(x).
+  (* Pre-condition for 'by' *)
+  Have: min_0 < x.
+}
+Prove: false.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function more_stmt_assigns
+------------------------------------------------------------
+
+Goal Post-condition 'qed_ok,ok_with_hoare' in 'more_stmt_assigns':
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function more_stmt_assigns with behavior blk_stmt_86
+------------------------------------------------------------
+
+Goal Assigns for 'blk' 'qed_ok,qed_ok' at block (1/2):
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Assigns for 'blk' 'qed_ok,qed_ok' at block (2/2):
+Effect at line 163
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function part_stmt_bhv with behavior b1
+------------------------------------------------------------
+
+Goal Post-condition for 'b1' 'qed_ok' in 'part_stmt_bhv':
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function part_stmt_bhv with behavior bs_stmt_93_b1
+------------------------------------------------------------
+
+Goal Post-condition for 'bs' (file tests/wp/wp_behav.c, line 175) at block:
+Assume { Type: is_sint32(x). (* Residual *) When: x <= 0. }
+Prove: false.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function razT
+------------------------------------------------------------
+
+Goal Preservation of Invariant 'qed_ok' (file tests/wp/wp_behav.c, line 153):
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(n_1).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i) /\ is_sint32(i_1).
+  (* Pre-condition *)
+  Have: n_1 <= 9.
+  (* Invariant 'qed_ok' *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) -> (T[i_2] = 0))).
+  (* Then *)
+  Have: i < n.
+}
+Prove: T[i <- 0][i_1] = 0.
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant 'qed_ok' (file tests/wp/wp_behav.c, line 153):
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function razT with behavior b1
+------------------------------------------------------------
+
+Goal Post-condition for 'b1' 'e1' in 'razT':
+Let x = T[0].
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(n_1) /\ is_sint32(x).
+  (* Pre-condition *)
+  Have: n_1 <= 9.
+  (* Pre-condition for 'b1' *)
+  Have: 0 < n_1.
+  (* Invariant 'qed_ok' *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) -> (T[i_1] = 0))).
+  (* Else *)
+  Have: n <= i.
+}
+Prove: x = 0.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function stmt_assigns
+------------------------------------------------------------
+
+Goal Post-condition (file tests/wp/wp_behav.c, line 134) in 'stmt_assigns':
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function stmt_assigns with behavior default_for_stmt_70
+------------------------------------------------------------
+
+Goal Assigns (file tests/wp/wp_behav.c, line 139) at call 'unknown' (file tests/wp/wp_behav.c, line 140):
+Call Effect at line 140
+Prove: false.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function stmt_contract with behavior default_for_stmt_22
+------------------------------------------------------------
+
+Goal Pre-condition 'qed_ok' at block:
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Post-condition 'qed_ok' at block:
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function stmt_contract with behavior ko
+------------------------------------------------------------
+
+Goal Post-condition for 'ko' 'qed_ko' in 'stmt_contract':
+Assume {
+  Type: is_sint32(stmt_contract_0).
+  (* Post-condition 'qed_ok' at block *)
+  Have: 0 < stmt_contract_0.
+}
+Prove: 3 <= stmt_contract_0.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function stmt_contract with behavior ko_without_asgn
+------------------------------------------------------------
+
+Goal Post-condition for 'ko_without_asgn' 'qed_ko' in 'stmt_contract':
+Assume {
+  Type: is_sint32(Y) /\ is_sint32(stmt_contract_0).
+  (* Post-condition 'qed_ok' at block *)
+  Have: 0 < stmt_contract_0.
+}
+Prove: Y < stmt_contract_0.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function stmt_contract with behavior ok
+------------------------------------------------------------
+
+Goal Post-condition for 'ok' 'qed_ok' in 'stmt_contract':
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function stmt_contract_assigns with behavior default_for_stmt_43
+------------------------------------------------------------
+
+Goal Pre-condition 'qed_ok' at block:
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Post-condition 'qed_ok' at block:
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Assigns 'qed_ok,asgn_ok' at block:
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function stmt_contract_assigns with behavior ko
+------------------------------------------------------------
+
+Goal Post-condition for 'ko' 'qed_ko' in 'stmt_contract_assigns':
+Assume {
+  Type: is_sint32(stmt_contract_assigns_0).
+  (* Post-condition 'qed_ok' at block *)
+  Have: 0 < stmt_contract_assigns_0.
+}
+Prove: 3 <= stmt_contract_assigns_0.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function stmt_contract_assigns with behavior ok
+------------------------------------------------------------
+
+Goal Post-condition for 'ok' 'qed_ok' in 'stmt_contract_assigns':
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function stmt_contract_assigns with behavior ok_asgn
+------------------------------------------------------------
+
+Goal Post-condition for 'ok_asgn' 'qed_ok' in 'stmt_contract_assigns':
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function stmt_contract_label
+------------------------------------------------------------
+
+Goal Post-condition 'qed_ok' in 'stmt_contract_label':
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function stmt_contract_label with behavior default_for_stmt_32
+------------------------------------------------------------
+
+Goal Post-condition 'qed_ok' at block:
+Prove: true.
+
+------------------------------------------------------------

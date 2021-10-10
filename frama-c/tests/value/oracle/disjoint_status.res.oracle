@@ -1,0 +1,101 @@
+[kernel] Parsing tests/value/disjoint_status.i (no preprocessing)
+[value] Analyzing a complete application starting at main
+[value] Computing initial state
+[value] Initial state computed
+[value:initial-state] Values of globals at initialization
+  x ∈ {0}
+[value:alarm] tests/value/disjoint_status.i:13: Warning: 
+  function main: precondition c + 1 ≡ 2 got status unknown.
+[value:alarm] tests/value/disjoint_status.i:14: Warning: 
+  function main: precondition c + d ≡ 3 got status unknown.
+[value] computing for function f <- main.
+  Called from tests/value/disjoint_status.i:18.
+[value] tests/value/disjoint_status.i:18: 
+  function f: precondition 'ReqTrue' got status valid.
+[value:alarm] tests/value/disjoint_status.i:8: Warning: 
+  assertion 'A1' got status invalid (stopping propagation).
+[value] tests/value/disjoint_status.i:6: 
+  function f: no state left, postcondition 'PostTrue' got status valid.
+[value] Recording results for f
+[value] Done for function f
+[value:alarm] tests/value/disjoint_status.i:19: Warning: 
+  assertion got status unknown.
+[value] computing for function f <- main.
+  Called from tests/value/disjoint_status.i:20.
+[value] tests/value/disjoint_status.i:20: 
+  function f: precondition 'ReqTrue' got status valid.
+[value] tests/value/disjoint_status.i:8: assertion 'A1' got status valid.
+[value] tests/value/disjoint_status.i:9: assertion 'A2' got status valid.
+[value] tests/value/disjoint_status.i:6: 
+  function f: postcondition 'PostTrue' got status valid.
+[value] Recording results for f
+[value] Done for function f
+[value] Recording results for main
+[value] done for function main
+[value] ====== VALUES COMPUTED ======
+[value:final-states] Values at end of function f:
+  x ∈ {0}
+[value:final-states] Values at end of function main:
+  x ∈ {0}
+[from] Computing for function f
+[from] Done for function f
+[from] Computing for function main
+[from] Done for function main
+[from] ====== DEPENDENCIES COMPUTED ======
+  These dependencies hold at termination for the executions that terminate:
+[from] Function f:
+  x FROM c; d
+[from] Function main:
+  x FROM c; d
+[from] ====== END OF DEPENDENCIES ======
+[inout] Out (internal) for function f:
+    x
+[inout] Inputs for function f:
+    \nothing
+[inout] Out (internal) for function main:
+    x
+[inout] Inputs for function main:
+    \nothing
+[report] Computing properties status...
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'f'
+--------------------------------------------------------------------------------
+
+[  Valid  ] Pre-condition 'ReqTrue'
+            by Call Preconditions.
+[  Valid  ] Post-condition 'PostTrue'
+            by Value.
+[    -    ] Assertion 'A1' (file tests/value/disjoint_status.i, line 8)
+            tried with Value.
+[  Valid  ] Assertion 'A2' (file tests/value/disjoint_status.i, line 9)
+            by Value.
+[  Valid  ] Default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'main'
+--------------------------------------------------------------------------------
+
+[    -    ] Pre-condition (file tests/value/disjoint_status.i, line 13)
+            tried with Value.
+[    -    ] Pre-condition (file tests/value/disjoint_status.i, line 14)
+            tried with Value.
+[    -    ] Assertion (file tests/value/disjoint_status.i, line 19)
+            tried with Value.
+[  Valid  ] Default behavior
+            by Frama-C kernel.
+[  Valid  ] Instance of 'Pre-condition 'ReqTrue'' at call 'f' (file tests/value/disjoint_status.i, line 18)
+
+            by Value.
+[  Valid  ] Instance of 'Pre-condition 'ReqTrue'' at call 'f' (file tests/value/disjoint_status.i, line 20)
+
+            by Value.
+
+--------------------------------------------------------------------------------
+--- Status Report Summary
+--------------------------------------------------------------------------------
+     7 Completely validated
+     4 To be validated
+    11 Total
+--------------------------------------------------------------------------------

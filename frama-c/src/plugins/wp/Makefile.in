@@ -1,0 +1,324 @@
+##########################################################################
+#                                                                        #
+#  This file is part of WP plug-in of Frama-C.                           #
+#                                                                        #
+#  Copyright (C) 2007-2018                                               #
+#    CEA (Commissariat a l'energie atomique et aux energies              #
+#         alternatives)                                                  #
+#                                                                        #
+#  you can redistribute it and/or modify it under the terms of the GNU   #
+#  Lesser General Public License as published by the Free Software       #
+#  Foundation, version 2.1.                                              #
+#                                                                        #
+#  It is distributed in the hope that it will be useful,                 #
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of        #
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         #
+#  GNU Lesser General Public License for more details.                   #
+#                                                                        #
+#  See the GNU Lesser General Public License version 2.1                 #
+#  for more details (enclosed in the file licenses/LGPLv2.1).            #
+#                                                                        #
+##########################################################################
+
+# Do not use ?= to initialize both below variables
+# (fixed efficiency issue, see GNU Make manual, Section 8.11)
+ifndef FRAMAC_SHARE
+FRAMAC_SHARE  :=$(shell frama-c-config -print-share-path)
+endif
+ifndef FRAMAC_LIBDIR
+FRAMAC_LIBDIR :=$(shell frama-c-config -print-libpath)
+endif
+PLUGIN_DIR ?=.
+
+include $(FRAMAC_SHARE)/Makefile.config
+
+# Coq Resources Installation
+
+include $(PLUGIN_DIR)/share/Makefile.resources
+
+# Extension of the GUI for wp is compilable
+# only if gnomecanvas is available
+ifeq ($(HAS_GNOMECANVAS),yes)
+PLUGIN_GUI_CMO:= \
+	GuiConfig \
+	GuiList \
+	GuiSequent \
+	GuiProver \
+	GuiTactic \
+	GuiProof \
+	GuiComposer \
+	GuiGoal \
+	GuiSource \
+	GuiPanel \
+	GuiNavigator
+endif
+
+PLUGIN_ENABLE:=@ENABLE_WP@
+PLUGIN_NAME:=Wp
+PLUGIN_CMO:= \
+	rformat wprop \
+	wp_parameters wp_error \
+	dyncall ctypes clabels \
+	Separation \
+	LogicUsage RefUsage \
+	cil2cfg normAtLabels wpPropId mcfg \
+	Context Warning Model Lang Repr Matrix Passive Splitter \
+	LogicBuiltins Definitions \
+	Cmath Cint Cfloat Vset Vlist Region Cstring Cvalues \
+	Letify Cleaning \
+	Sigs Mstate Conditions \
+	Filtering \
+	Plang Pcfg Pcond \
+	CodeSemantics \
+	LogicCompiler \
+	LogicSemantics LogicAssigns  \
+	Sigma MemEmpty MemZeroAlias MemVar MemTyped \
+	wpStrategy wpRTE wpAnnot \
+	CfgCompiler StmtSemantics \
+	VCS script proof wpo wpReport \
+	Footprint Tactical Strategy \
+	TacSplit TacChoice TacRange \
+	TacArray TacCompound TacUnfold \
+	TacHavoc TacInstance TacLemma \
+	TacFilter TacCut WpTac TacNormalForm \
+	TacRewrite TacBitwised TacBitrange TacShift \
+	TacCongruence TacOverflow Auto \
+	ProofSession ProofScript ProofEngine \
+	why3_xml \
+	ProverTask ProverErgo ProverCoq ProverWhy3 ProverWhy3ide \
+	driver prover ProverSearch ProverScript \
+	Generator Factory \
+	calculus cfgDump cfgWP \
+	register VC
+
+PLUGIN_CMI:=
+
+PLUGIN_GENERATED:= \
+   $(PLUGIN_DIR)/script.ml \
+   $(PLUGIN_DIR)/rformat.ml \
+   $(PLUGIN_DIR)/driver.ml \
+   $(PLUGIN_DIR)/why3_xml.ml \
+   $(PLUGIN_DIR)/Wp.mli
+PLUGIN_DEPENDENCIES:= rtegen qed
+PLUGIN_UNDOC+=
+PLUGIN_INTRO:=$(PLUGIN_DIR)/intro_wp.txt
+PLUGIN_DISTRIBUTED:=$(PLUGIN_ENABLE)
+PLUGIN_DISTRIB_EXTERNAL:= \
+	Changelog \
+	Makefile.in \
+        MakeAPI \
+	configure.ac \
+	configure \
+	$(addprefix share/, $(ALL_CEA_RESOURCES) \
+	                    $(ALL_UNMODIFIED_WHY3_RESOURCES) \
+	                    $(ALL_MODIFIED_WHY3_RESOURCES))
+
+CEA_WP_GENEREATED=why3_xml.ml script.ml rformat.ml driver.ml
+
+# --------------------------------------------------------------------------
+# --- Tests                                                              ---
+# --------------------------------------------------------------------------
+
+PLUGIN_TESTS_DIRS:= \
+  wp wp_plugin wp_acsl wp_bts \
+  wp_store wp_hoare wp_typed wp_usage \
+  wp_gallery wp_manual
+
+# --------------------------------------------------------------------------
+# --- Dynamic Plugin                                                     ---
+# --------------------------------------------------------------------------
+
+include $(FRAMAC_SHARE)/Makefile.dynamic
+
+# Regenerating the Makefile on need
+
+ifeq ("$(FRAMAC_INTERNAL)","yes")
+CONFIG_STATUS_DIR=$(FRAMAC_SRC)
+else
+CONFIG_STATUS_DIR=.
+endif
+
+$(Wp_DIR)/Makefile: $(Wp_DIR)/Makefile.in $(Wp_DIR)/share/Makefile.resources $(CONFIG_STATUS_DIR)/config.status
+	@cd $(CONFIG_STATUS_DIR) && ./config.status --file $@
+
+# --------------------------------------------------------------------------
+# --- WP API                                                             ---
+# --------------------------------------------------------------------------
+
+WP_API_BASE= \
+	wp_parameters.mli \
+	ctypes.mli clabels.mli \
+	Separation.mli \
+	LogicUsage.mli RefUsage.mli \
+	normAtLabels.mli \
+	wpPropId.mli mcfg.ml \
+	Context.mli Warning.mli Model.mli \
+	Lang.mli Repr.mli Passive.mli Splitter.mli \
+	LogicBuiltins.mli Definitions.mli \
+	Cint.mli Cfloat.mli Vset.mli Cstring.mli \
+	Sigs.ml Mstate.mli Conditions.mli Filtering.mli \
+	Plang.mli Pcfg.mli Pcond.mli \
+	CodeSemantics.mli \
+	LogicCompiler.mli LogicSemantics.mli \
+	Sigma.mli MemVar.mli MemTyped.mli \
+	CfgCompiler.mli StmtSemantics.mli \
+	Factory.mli driver.mli VCS.mli Tactical.mli Strategy.mli Auto.mli \
+	VC.mli wpo.mli ProverTask.mli prover.mli
+
+define WP_capitalize
+$(shell printf "%s%s" \
+    $$($(ECHO) $(1) | cut -c 1 | tr '[:lower:]' '[:upper:]')
+    $$($(ECHO) $(1) | cut -c 2-))
+endef
+
+define WP_export
+$(ECHO) "module $(call WP_capitalize, $(basename $(notdir $(1)))) : sig" >> $(2);
+$(ECHO) '# 1 "$(1)"' >> $(2);
+$(CAT) $(1) >> $(2);
+$(ECHO) "end" >> $(2);
+endef
+
+WP_MLI=$(addprefix $(Wp_DIR)/, $(WP_API_BASE))
+
+$(Wp_DIR)/Wp.mli: $(Wp_DIR)/Makefile $(WP_MLI)
+	$(PRINT_MAKING) $@
+	$(RM) $@ $@.tmp
+	$(ECHO) "(* This file is generated. Do not edit. *)" > $@.tmp
+	$(ECHO) "(** {b WP Public API} *)" > $@.tmp
+	$(foreach file,$(WP_MLI),$(call WP_export,$(file),$@.tmp))
+	$(CHMOD_RO) $@.tmp
+	$(MV) $@.tmp $@
+
+.PHONY: wp-doc-api
+
+wp-doc-api:
+	$(ECHO) "Generating WP documentation"
+	@mkdir -p $(Wp_DIR)/doc/html
+	$(RM) -fr $(Wp_DIR)/doc/html/*
+	$(CP) $(Wp_DIR)/doc/ocamldoc.css $(Wp_DIR)/doc/html/style.css
+	$(OCAMLDOC) \
+		-package zarith \
+		-I lib/fc -I lib/plugins -I $(Wp_DIR) -stars \
+		-html -d $(Wp_DIR)/doc/html -charset utf-8 \
+		-t "Frama-C/WP API Documentation" \
+		-intro $(Wp_DIR)/doc/wp-api.odoc \
+		-colorize-code -short-functors $(Wp_DIR)/Wp.mli
+	$(ECHO) "Generating $(Wp_DIR)/doc/html/index.html"
+
+clean::
+	$(RM) $(Wp_DIR)/Wp.mli
+	$(RM) -fr $(Wp_DIR)/doc/html
+
+# --------------------------------------------------------------------------
+# --- Installation Resources
+# --------------------------------------------------------------------------
+
+## All relative to share/
+
+WP_COQ_SOURCES= $(addprefix coqwp/, $(COQ_LIBS_CEA) $(COQ_LIBS_INRIA))
+WHY3_COQ_SOURCES= $(addprefix why3/, $(COQ_LIBS_CEA))
+
+ALL_COQ_SOURCES= $(WP_COQ_SOURCES) $(WHY3_COQ_SOURCES)
+ALL_COQ_BINARIES= $(addsuffix o, $(ALL_COQ_SOURCES))
+ALL_ERGO_SOURCES= $(addprefix ergo/, $(ERGO_LIBS_CEA) $(ERGO_LIBS_INRIA))
+ALL_WHY3_SOURCES= $(addprefix why3/, $(WHY3_LIBS_CEA))
+
+ALL_RESOURCES= \
+	wp.driver \
+	why3/coq.drv \
+	why3/why3.conf \
+	$(ALL_COQ_SOURCES) \
+	$(ALL_ERGO_SOURCES) \
+	$(ALL_WHY3_SOURCES)
+
+INSTALL_OPT?=
+INSTALL_SHARE=@$(Wp_DIR)/share/instwp $(INSTALL_OPT)
+
+byte:: $(Wp_DIR)/share/instwp
+opt:: $(Wp_DIR)/share/instwp
+clean::
+	rm -f $(Wp_DIR)/share/instwp
+	rm -f $(Wp_DIR)/share/install.cm*
+
+$(Wp_DIR)/share/instwp: $(Wp_DIR)/share/install.ml
+	$(OCAMLC) $(WARNINGS) -o $@ unix.cma $^
+
+# --------------------------------------------------------------------------
+# --- Pre-Compiled Coq Libraries                                         ---
+# --------------------------------------------------------------------------
+
+.PHONY: wp-coq wp-why3 wp-coq-all wp-coq-clean wp-coq-install wp-coq-uninstall
+
+wp-coq-all: wp-coq wp-why3
+
+wp-coq: coqwpcompile
+	@echo "Run 'make wp-coq-install' to install all precompiled libraries"
+
+wp-why3:  why3compile
+	@echo "Run 'make wp-coq-install' to install all precompiled libraries"
+
+WP_COQC_ENABLED=@COQC@
+WP_WHY3COQC_ENABLED=@WHY3COQC@
+
+include $(Wp_DIR)/share/Makefile
+
+wp-coq-install:
+	$(PRINT_INSTALL) "Coq Libraries"
+	$(INSTALL_SHARE) -f -p -s \
+		-i $(Wp_DIR)/share \
+		-d $(FRAMAC_DATADIR)/wp \
+		$(ALL_COQ_BINARIES)
+
+wp-coq-uninstall:
+	$(PRINT_RM) "Coq Libraries"
+	@rm -f $(FRAMAC_DATADIR)/wp/why3/*.vo
+	@rm -f $(FRAMAC_DATADIR)/wp/coqwp/*.vo
+	@rm -f $(FRAMAC_DATADIR)/wp/coqwp/*/*.vo
+
+
+# --------------------------------------------------------------------------
+# --- Why3 configuration
+# --------------------------------------------------------------------------
+
+byte:: $(Wp_DIR)/share/why3/why3.conf
+opt:: $(Wp_DIR)/share/why3/why3.conf
+
+$(Wp_DIR)/share/why3/why3.conf:
+	@echo Generation of the extra-config for why3
+	@printf "[prover_modifiers]\n" >> $@
+	@printf "name=\"Coq\"\n" >> $@
+	@printf "option=\"-Q $(FRAMAC_DATADIR)/wp/why3 ''\"\n" >> $@
+	@printf "driver=\"$(FRAMAC_DATADIR)/wp/why3/coq.drv\"\n" >> $@
+	@printf "\n"  >> $@
+	@printf "[editor_modifiers coqide]\n" >> $@
+	@printf "option=\"-I $(FRAMAC_DATADIR)/wp/why3\"\n" >> $@
+	@printf "\n"  >> $@
+	@printf "[editor_modifiers proofgeneral-coq]\n" >> $@
+	@printf "option=\"--eval \\\\\"(setq coq-load-path (cons '(\\\\\\\\\\\\\"$(FRAMAC_DATADIR)/wp/why3\\\\\\\\\\\\\" \\\\\\\\\\\\\"\\\\\\\\\\\\\") coq-load-path))\\\\\"\"\n"  >> $@
+	@chmod u-w $@
+
+
+# --------------------------------------------------------------------------
+# --- Installation                                                       ---
+# --------------------------------------------------------------------------
+
+install:: clean-install
+	$(PRINT_INSTALL) WP shared files
+	$(MKDIR) $(FRAMAC_DATADIR)/wp
+	$(INSTALL_SHARE) -p \
+		-i $(Wp_DIR)/share \
+		-d $(FRAMAC_DATADIR)/wp \
+		$(ALL_RESOURCES) -f -b $(ALL_COQ_BINARIES)
+
+uninstall::
+	$(PRINT_RM) WP shared files
+	$(RM) -r $(FRAMAC_DATADIR)/wp
+
+# --------------------------------------------------------------------------
+# --- WP Release Stuff (CEA-LIST Only)
+# --------------------------------------------------------------------------
+sinclude MakeDistrib
+# --------------------------------------------------------------------------
+
+$(Wp_DIR)/.depend: $(Wp_DIR)/driver.mll
+$(Wp_DIR)/driver.mll: $(Wp_DIR)/Makefile

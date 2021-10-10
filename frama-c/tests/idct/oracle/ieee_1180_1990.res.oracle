@@ -1,0 +1,3630 @@
+[kernel] Parsing tests/idct/ieee_1180_1990.c (with preprocessing)
+[kernel:parser:decimal-float] tests/idct/ieee_1180_1990.c:101: Warning: 
+  Floating-point constant 3.14159265358979323846 is not represented exactly. Will use 0x1.921fb54442d18p1.
+  (warn-once: no further messages from category 'parser:decimal-float' will be emitted)
+[kernel] Parsing tests/idct/idct.c (with preprocessing)
+[value] Analyzing a complete application starting at main
+[value] Computing initial state
+[value] Initial state computed
+[value:initial-state] Values of globals at initialization
+  __fc_errno ∈ [--..--]
+  __fc_stdin ∈ {{ NULL ; &S___fc_stdin[0] }}
+  __fc_stdout ∈ {{ NULL ; &S___fc_stdout[0] }}
+  __fc_fopen[0..15] ∈ {0}
+  __fc_p_fopen ∈ {{ &__fc_fopen[0] }}
+  M1[0..7][0..7] ∈ {0}
+  IEEE_1180_1990_rand_randx ∈ {1}
+  IEEE_1180_1990_rand_z ∈ {1.9999999990686774*2^30}
+  IEEE_1180_1990_dctf_mcos[0..7][0..7] ∈ {0}
+  IEEE_1180_1990_dctf_init ∈ {1}
+  IEEE_1180_1990_idctf_mcos[0..7][0..7] ∈ {0}
+  IEEE_1180_1990_idctf_init ∈ {1}
+  idct_init ∈ {1}
+  idct_mc1[0..7][0..7] ∈ {0}
+  idct_mc2[0..7][0..7] ∈ {0}
+  S___fc_stdin[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[value] tests/idct/ieee_1180_1990.c:178: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:179: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:184: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:185: entering loop for the first time
+[value] computing for function idct <- main.
+  Called from tests/idct/ieee_1180_1990.c:187.
+[value] tests/idct/idct.c:87: entering loop for the first time
+[value] tests/idct/idct.c:88: entering loop for the first time
+[value] tests/idct/idct.c:90: 
+  function sqrt: precondition 'finite_arg' got status valid.
+[value] tests/idct/idct.c:90: 
+  function sqrt: precondition 'arg_positive' got status valid.
+[value] tests/idct/idct.c:91: 
+  function cos: precondition 'finite_arg' got status valid.
+[value] tests/idct/idct.c:125: entering loop for the first time
+[value] tests/idct/idct.c:126: entering loop for the first time
+[value] tests/idct/idct.c:128: entering loop for the first time
+[value:alarm] tests/idct/idct.c:129: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp1[i][j]);
+[value:alarm] tests/idct/idct.c:131: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp1[i][j]);
+[value:alarm] tests/idct/idct.c:141: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp1[i][j]);
+[value:alarm] tests/idct/idct.c:143: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp1[i][j]);
+[value:alarm] tests/idct/idct.c:145: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp1[i][j]);
+[value:alarm] tests/idct/idct.c:147: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp1[i][j]);
+[value:alarm] tests/idct/idct.c:150: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp1[i][j]);
+[value] tests/idct/idct.c:141: Warning: 2's complement assumed for overflow
+[value] tests/idct/idct.c:159: entering loop for the first time
+[value] tests/idct/idct.c:160: entering loop for the first time
+[value] tests/idct/idct.c:162: entering loop for the first time
+[value] tests/idct/idct.c:163: Warning: 2's complement assumed for overflow
+[value:alarm] tests/idct/idct.c:163: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp2[k][j]);
+[value:alarm] tests/idct/idct.c:163: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp1[i][j]);
+[value:alarm] tests/idct/idct.c:166: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp1[i][j]);
+[value] tests/idct/idct.c:176: Warning: 2's complement assumed for overflow
+[value:alarm] tests/idct/idct.c:176: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp1[i][j]);
+[value:alarm] tests/idct/idct.c:178: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp1[i][j]);
+[value:alarm] tests/idct/idct.c:180: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp1[i][j]);
+[value:alarm] tests/idct/idct.c:182: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp1[i][j]);
+[value:alarm] tests/idct/idct.c:185: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp1[i][j]);
+[value] Recording results for idct
+[value] Done for function idct
+[value] tests/idct/ieee_1180_1990.c:189: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:190: entering loop for the first time
+[value:alarm] tests/idct/ieee_1180_1990.c:191: Warning: 
+  accessing uninitialized left-value. assert \initialized(&m2[i][j]);
+[value] computing for function printf_va_1 <- main.
+  Called from tests/idct/ieee_1180_1990.c:195.
+[value] using specification for function printf_va_1
+[value] tests/idct/ieee_1180_1990.c:195: 
+  function printf_va_1: precondition got status valid.
+[value] Done for function printf_va_1
+[value] computing for function printf_va_2 <- main.
+  Called from tests/idct/ieee_1180_1990.c:196.
+[value] using specification for function printf_va_2
+[value] tests/idct/ieee_1180_1990.c:196: 
+  function printf_va_2: precondition got status valid.
+[value] Done for function printf_va_2
+[value] tests/idct/ieee_1180_1990.c:202: entering loop for the first time
+[value] computing for function IEEE_1180_1990_mkbk <- main.
+  Called from tests/idct/ieee_1180_1990.c:211.
+[value] tests/idct/ieee_1180_1990.c:83: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:84: entering loop for the first time
+[value] computing for function IEEE_1180_1990_rand <- IEEE_1180_1990_mkbk <- main.
+  Called from tests/idct/ieee_1180_1990.c:85.
+[value] Recording results for IEEE_1180_1990_rand
+[value] Done for function IEEE_1180_1990_rand
+[value] computing for function IEEE_1180_1990_rand <- IEEE_1180_1990_mkbk <- main.
+  Called from tests/idct/ieee_1180_1990.c:85.
+[value] tests/idct/ieee_1180_1990.c:69: Warning: 
+  2's complement assumed for overflow
+[value] Recording results for IEEE_1180_1990_rand
+[value] Done for function IEEE_1180_1990_rand
+[value] computing for function IEEE_1180_1990_rand <- IEEE_1180_1990_mkbk <- main.
+  Called from tests/idct/ieee_1180_1990.c:85.
+[value] Recording results for IEEE_1180_1990_rand
+[value] Done for function IEEE_1180_1990_rand
+[value] computing for function IEEE_1180_1990_rand <- IEEE_1180_1990_mkbk <- main.
+  Called from tests/idct/ieee_1180_1990.c:85.
+[value] Recording results for IEEE_1180_1990_rand
+[value] Done for function IEEE_1180_1990_rand
+[value] computing for function IEEE_1180_1990_rand <- IEEE_1180_1990_mkbk <- main.
+  Called from tests/idct/ieee_1180_1990.c:85.
+[value] Recording results for IEEE_1180_1990_rand
+[value] Done for function IEEE_1180_1990_rand
+[value] computing for function IEEE_1180_1990_rand <- IEEE_1180_1990_mkbk <- main.
+  Called from tests/idct/ieee_1180_1990.c:85.
+[value] Recording results for IEEE_1180_1990_rand
+[value] Done for function IEEE_1180_1990_rand
+[value] computing for function IEEE_1180_1990_rand <- IEEE_1180_1990_mkbk <- main.
+  Called from tests/idct/ieee_1180_1990.c:85.
+[value] Recording results for IEEE_1180_1990_rand
+[value] Done for function IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] Recording results for IEEE_1180_1990_mkbk
+[value] Done for function IEEE_1180_1990_mkbk
+[value] computing for function IEEE_1180_1990_dctf <- main.
+  Called from tests/idct/ieee_1180_1990.c:212.
+[value] tests/idct/ieee_1180_1990.c:98: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:99: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:100: 
+  function sqrt: precondition 'finite_arg' got status valid.
+[value] tests/idct/ieee_1180_1990.c:100: 
+  function sqrt: precondition 'arg_positive' got status valid.
+[value] tests/idct/ieee_1180_1990.c:101: 
+  function cos: precondition 'finite_arg' got status valid.
+[value] tests/idct/ieee_1180_1990.c:104: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:105: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:108: entering loop for the first time
+[value:alarm] tests/idct/ieee_1180_1990.c:109: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp1[i][j]);
+[value] tests/idct/ieee_1180_1990.c:111: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:112: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:115: entering loop for the first time
+[value:alarm] tests/idct/ieee_1180_1990.c:116: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp1[i][k]);
+[value:alarm] tests/idct/ieee_1180_1990.c:116: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp2[i][j]);
+[value:alarm] tests/idct/ieee_1180_1990.c:117: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp2[i][j]);
+[value:alarm] tests/idct/ieee_1180_1990.c:119: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp2[i][j]);
+[value:alarm] tests/idct/ieee_1180_1990.c:121: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp2[i][j]);
+[value:alarm] tests/idct/ieee_1180_1990.c:122: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp2[i][j]);
+[value:alarm] tests/idct/ieee_1180_1990.c:122: Warning: 
+  overflow in conversion from floating-point to integer.
+  assert -2147483649 < tmp2[i][j] + 0.5;
+[value:alarm] tests/idct/ieee_1180_1990.c:122: Warning: 
+  overflow in conversion from floating-point to integer.
+  assert tmp2[i][j] + 0.5 < 2147483648;
+[value:alarm] tests/idct/ieee_1180_1990.c:124: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp2[i][j]);
+[value:alarm] tests/idct/ieee_1180_1990.c:124: Warning: 
+  overflow in conversion from floating-point to integer.
+  assert -2147483649 < tmp2[i][j] - 0.5;
+[value:alarm] tests/idct/ieee_1180_1990.c:124: Warning: 
+  overflow in conversion from floating-point to integer.
+  assert tmp2[i][j] - 0.5 < 2147483648;
+[value] Recording results for IEEE_1180_1990_dctf
+[value] Done for function IEEE_1180_1990_dctf
+[value] computing for function IEEE_1180_1990_idctf <- main.
+  Called from tests/idct/ieee_1180_1990.c:213.
+[value] tests/idct/ieee_1180_1990.c:138: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:139: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:140: 
+  function sqrt: precondition 'finite_arg' got status valid.
+[value] tests/idct/ieee_1180_1990.c:140: 
+  function sqrt: precondition 'arg_positive' got status valid.
+[value] tests/idct/ieee_1180_1990.c:141: 
+  function cos: precondition 'finite_arg' got status valid.
+[value] tests/idct/ieee_1180_1990.c:145: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:146: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:149: entering loop for the first time
+[value:alarm] tests/idct/ieee_1180_1990.c:150: Warning: 
+  accessing uninitialized left-value. assert \initialized(&(*(m1 + k))[j]);
+[value:alarm] tests/idct/ieee_1180_1990.c:150: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp1[i][j]);
+[value] tests/idct/ieee_1180_1990.c:152: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:153: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:156: entering loop for the first time
+[value:alarm] tests/idct/ieee_1180_1990.c:157: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp1[i][k]);
+[value:alarm] tests/idct/ieee_1180_1990.c:157: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp2[i][j]);
+[value:alarm] tests/idct/ieee_1180_1990.c:158: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp2[i][j]);
+[value:alarm] tests/idct/ieee_1180_1990.c:160: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp2[i][j]);
+[value:alarm] tests/idct/ieee_1180_1990.c:162: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp2[i][j]);
+[value:alarm] tests/idct/ieee_1180_1990.c:163: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp2[i][j]);
+[value:alarm] tests/idct/ieee_1180_1990.c:163: Warning: 
+  overflow in conversion from floating-point to integer.
+  assert -2147483649 < tmp2[i][j] + 0.5;
+[value:alarm] tests/idct/ieee_1180_1990.c:163: Warning: 
+  overflow in conversion from floating-point to integer.
+  assert tmp2[i][j] + 0.5 < 2147483648;
+[value:alarm] tests/idct/ieee_1180_1990.c:165: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tmp2[i][j]);
+[value:alarm] tests/idct/ieee_1180_1990.c:165: Warning: 
+  overflow in conversion from floating-point to integer.
+  assert -2147483649 < tmp2[i][j] - 0.5;
+[value:alarm] tests/idct/ieee_1180_1990.c:165: Warning: 
+  overflow in conversion from floating-point to integer.
+  assert tmp2[i][j] - 0.5 < 2147483648;
+[value] Recording results for IEEE_1180_1990_idctf
+[value] Done for function IEEE_1180_1990_idctf
+[value] computing for function idct <- main.
+  Called from tests/idct/ieee_1180_1990.c:214.
+[value] tests/idct/idct.c:129: Warning: 2's complement assumed for overflow
+[value:alarm] tests/idct/idct.c:129: Warning: 
+  accessing uninitialized left-value. assert \initialized(&(*(m1 + k))[j]);
+[value] Recording results for idct
+[value] Done for function idct
+[value] tests/idct/ieee_1180_1990.c:215: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:216: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:218: Warning: 
+  2's complement assumed for overflow
+[value:alarm] tests/idct/ieee_1180_1990.c:218: Warning: 
+  accessing uninitialized left-value. assert \initialized(&m3[j][k]);
+[value:alarm] tests/idct/ieee_1180_1990.c:218: Warning: 
+  accessing uninitialized left-value. assert \initialized(&m4[j][k]);
+[value:alarm] tests/idct/ieee_1180_1990.c:219: Warning: 
+  accessing uninitialized left-value. assert \initialized(&res[0].pme[j][k]);
+[value] tests/idct/ieee_1180_1990.c:220: Warning: 
+  2's complement assumed for overflow
+[value] tests/idct/ieee_1180_1990.c:230: Warning: 
+  2's complement assumed for overflow
+[value:alarm] tests/idct/ieee_1180_1990.c:231: Warning: 
+  accessing uninitialized left-value. assert \initialized(&res[0].pmse[j][k]);
+[value] tests/idct/ieee_1180_1990.c:219: Warning: 
+  2's complement assumed for overflow
+[value] tests/idct/ieee_1180_1990.c:231: Warning: 
+  2's complement assumed for overflow
+[value] tests/idct/ieee_1180_1990.c:233: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:234: entering loop for the first time
+[value] computing for function IEEE_1180_1990_dctf <- main.
+  Called from tests/idct/ieee_1180_1990.c:236.
+[value] Recording results for IEEE_1180_1990_dctf
+[value] Done for function IEEE_1180_1990_dctf
+[value] computing for function IEEE_1180_1990_idctf <- main.
+  Called from tests/idct/ieee_1180_1990.c:237.
+[value] Recording results for IEEE_1180_1990_idctf
+[value] Done for function IEEE_1180_1990_idctf
+[value] computing for function idct <- main.
+  Called from tests/idct/ieee_1180_1990.c:238.
+[value] Recording results for idct
+[value] Done for function idct
+[value] tests/idct/ieee_1180_1990.c:239: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:240: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:242: Warning: 
+  2's complement assumed for overflow
+[value:alarm] tests/idct/ieee_1180_1990.c:242: Warning: 
+  accessing uninitialized left-value. assert \initialized(&m3[j][k]);
+[value:alarm] tests/idct/ieee_1180_1990.c:242: Warning: 
+  accessing uninitialized left-value. assert \initialized(&m4[j][k]);
+[value:alarm] tests/idct/ieee_1180_1990.c:243: Warning: 
+  accessing uninitialized left-value. assert \initialized(&res[3].pme[j][k]);
+[value] tests/idct/ieee_1180_1990.c:244: Warning: 
+  2's complement assumed for overflow
+[value] tests/idct/ieee_1180_1990.c:254: Warning: 
+  2's complement assumed for overflow
+[value:alarm] tests/idct/ieee_1180_1990.c:255: Warning: 
+  accessing uninitialized left-value. assert \initialized(&res[3].pmse[j][k]);
+[value] tests/idct/ieee_1180_1990.c:243: Warning: 
+  2's complement assumed for overflow
+[value] tests/idct/ieee_1180_1990.c:255: Warning: 
+  2's complement assumed for overflow
+[value] computing for function IEEE_1180_1990_mkbk <- main.
+  Called from tests/idct/ieee_1180_1990.c:257.
+[value] computing for function IEEE_1180_1990_rand <- IEEE_1180_1990_mkbk <- main.
+  Called from tests/idct/ieee_1180_1990.c:85.
+[value] Recording results for IEEE_1180_1990_rand
+[value] Done for function IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] Recording results for IEEE_1180_1990_mkbk
+[value] Done for function IEEE_1180_1990_mkbk
+[value] tests/idct/ieee_1180_1990.c:258: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:259: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:260: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:261: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:262: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:264: Warning: 
+  2's complement assumed for overflow
+[value:alarm] tests/idct/ieee_1180_1990.c:264: Warning: 
+  accessing uninitialized left-value. assert \initialized(&m3[j][k]);
+[value:alarm] tests/idct/ieee_1180_1990.c:264: Warning: 
+  accessing uninitialized left-value. assert \initialized(&m4[j][k]);
+[value:alarm] tests/idct/ieee_1180_1990.c:265: Warning: 
+  accessing uninitialized left-value. assert \initialized(&res[1].pme[j][k]);
+[value] tests/idct/ieee_1180_1990.c:266: Warning: 
+  2's complement assumed for overflow
+[value] tests/idct/ieee_1180_1990.c:276: Warning: 
+  2's complement assumed for overflow
+[value:alarm] tests/idct/ieee_1180_1990.c:277: Warning: 
+  accessing uninitialized left-value. assert \initialized(&res[1].pmse[j][k]);
+[value] tests/idct/ieee_1180_1990.c:265: Warning: 
+  2's complement assumed for overflow
+[value] tests/idct/ieee_1180_1990.c:277: Warning: 
+  2's complement assumed for overflow
+[value] tests/idct/ieee_1180_1990.c:279: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:280: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:282: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:283: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:284: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:285: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:286: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:288: Warning: 
+  2's complement assumed for overflow
+[value:alarm] tests/idct/ieee_1180_1990.c:288: Warning: 
+  accessing uninitialized left-value. assert \initialized(&m3[j][k]);
+[value:alarm] tests/idct/ieee_1180_1990.c:288: Warning: 
+  accessing uninitialized left-value. assert \initialized(&m4[j][k]);
+[value:alarm] tests/idct/ieee_1180_1990.c:289: Warning: 
+  accessing uninitialized left-value. assert \initialized(&res[4].pme[j][k]);
+[value] tests/idct/ieee_1180_1990.c:290: Warning: 
+  2's complement assumed for overflow
+[value] tests/idct/ieee_1180_1990.c:300: Warning: 
+  2's complement assumed for overflow
+[value:alarm] tests/idct/ieee_1180_1990.c:301: Warning: 
+  accessing uninitialized left-value. assert \initialized(&res[4].pmse[j][k]);
+[value] tests/idct/ieee_1180_1990.c:289: Warning: 
+  2's complement assumed for overflow
+[value] tests/idct/ieee_1180_1990.c:301: Warning: 
+  2's complement assumed for overflow
+[value] computing for function IEEE_1180_1990_mkbk <- main.
+  Called from tests/idct/ieee_1180_1990.c:303.
+[value] computing for function IEEE_1180_1990_rand <- IEEE_1180_1990_mkbk <- main.
+  Called from tests/idct/ieee_1180_1990.c:85.
+[value] Recording results for IEEE_1180_1990_rand
+[value] Done for function IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] Recording results for IEEE_1180_1990_mkbk
+[value] Done for function IEEE_1180_1990_mkbk
+[value] tests/idct/ieee_1180_1990.c:304: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:305: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:306: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:307: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:308: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:310: Warning: 
+  2's complement assumed for overflow
+[value:alarm] tests/idct/ieee_1180_1990.c:310: Warning: 
+  accessing uninitialized left-value. assert \initialized(&m3[j][k]);
+[value:alarm] tests/idct/ieee_1180_1990.c:310: Warning: 
+  accessing uninitialized left-value. assert \initialized(&m4[j][k]);
+[value:alarm] tests/idct/ieee_1180_1990.c:311: Warning: 
+  accessing uninitialized left-value. assert \initialized(&res[2].pme[j][k]);
+[value] tests/idct/ieee_1180_1990.c:312: Warning: 
+  2's complement assumed for overflow
+[value] tests/idct/ieee_1180_1990.c:322: Warning: 
+  2's complement assumed for overflow
+[value:alarm] tests/idct/ieee_1180_1990.c:323: Warning: 
+  accessing uninitialized left-value. assert \initialized(&res[2].pmse[j][k]);
+[value] tests/idct/ieee_1180_1990.c:311: Warning: 
+  2's complement assumed for overflow
+[value] tests/idct/ieee_1180_1990.c:323: Warning: 
+  2's complement assumed for overflow
+[value] tests/idct/ieee_1180_1990.c:325: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:326: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:328: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:329: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:330: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:331: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:332: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:334: Warning: 
+  2's complement assumed for overflow
+[value:alarm] tests/idct/ieee_1180_1990.c:334: Warning: 
+  accessing uninitialized left-value. assert \initialized(&m3[j][k]);
+[value:alarm] tests/idct/ieee_1180_1990.c:334: Warning: 
+  accessing uninitialized left-value. assert \initialized(&m4[j][k]);
+[value:alarm] tests/idct/ieee_1180_1990.c:335: Warning: 
+  accessing uninitialized left-value. assert \initialized(&res[5].pme[j][k]);
+[value] tests/idct/ieee_1180_1990.c:336: Warning: 
+  2's complement assumed for overflow
+[value] tests/idct/ieee_1180_1990.c:346: Warning: 
+  2's complement assumed for overflow
+[value:alarm] tests/idct/ieee_1180_1990.c:347: Warning: 
+  accessing uninitialized left-value. assert \initialized(&res[5].pmse[j][k]);
+[value] tests/idct/ieee_1180_1990.c:335: Warning: 
+  2's complement assumed for overflow
+[value] tests/idct/ieee_1180_1990.c:347: Warning: 
+  2's complement assumed for overflow
+[value] computing for function IEEE_1180_1990_mkbk <- main.
+  Called from tests/idct/ieee_1180_1990.c:211.
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] Recording results for IEEE_1180_1990_mkbk
+[value] Done for function IEEE_1180_1990_mkbk
+[value] computing for function IEEE_1180_1990_dctf <- main.
+  Called from tests/idct/ieee_1180_1990.c:212.
+[value] Recording results for IEEE_1180_1990_dctf
+[value] Done for function IEEE_1180_1990_dctf
+[value] computing for function IEEE_1180_1990_idctf <- main.
+  Called from tests/idct/ieee_1180_1990.c:213.
+[value] Recording results for IEEE_1180_1990_idctf
+[value] Done for function IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:214: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:235: Warning: 
+  2's complement assumed for overflow
+[value] computing for function IEEE_1180_1990_dctf <- main.
+  Called from tests/idct/ieee_1180_1990.c:236.
+[value] Recording results for IEEE_1180_1990_dctf
+[value] Done for function IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:237: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:238: Reusing old results for call to idct
+[value] computing for function IEEE_1180_1990_mkbk <- main.
+  Called from tests/idct/ieee_1180_1990.c:257.
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] Recording results for IEEE_1180_1990_mkbk
+[value] Done for function IEEE_1180_1990_mkbk
+[value] tests/idct/ieee_1180_1990.c:258: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:259: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:260: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:281: Warning: 
+  2's complement assumed for overflow
+[value] tests/idct/ieee_1180_1990.c:282: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:283: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:284: Reusing old results for call to idct
+[value] computing for function IEEE_1180_1990_mkbk <- main.
+  Called from tests/idct/ieee_1180_1990.c:303.
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] Recording results for IEEE_1180_1990_mkbk
+[value] Done for function IEEE_1180_1990_mkbk
+[value] tests/idct/ieee_1180_1990.c:304: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:305: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:306: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:327: Warning: 
+  2's complement assumed for overflow
+[value] tests/idct/ieee_1180_1990.c:328: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:329: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:330: Reusing old results for call to idct
+[value] computing for function IEEE_1180_1990_mkbk <- main.
+  Called from tests/idct/ieee_1180_1990.c:211.
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] tests/idct/ieee_1180_1990.c:85: 
+  Reusing old results for call to IEEE_1180_1990_rand
+[value] Recording results for IEEE_1180_1990_mkbk
+[value] Done for function IEEE_1180_1990_mkbk
+[value] computing for function IEEE_1180_1990_dctf <- main.
+  Called from tests/idct/ieee_1180_1990.c:212.
+[value] Recording results for IEEE_1180_1990_dctf
+[value] Done for function IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:213: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:214: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:236: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:237: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:238: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:257: 
+  Reusing old results for call to IEEE_1180_1990_mkbk
+[value] tests/idct/ieee_1180_1990.c:258: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:259: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:260: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:282: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:283: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:284: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:303: 
+  Reusing old results for call to IEEE_1180_1990_mkbk
+[value] tests/idct/ieee_1180_1990.c:304: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:305: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:306: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:328: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:329: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:330: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:211: 
+  Reusing old results for call to IEEE_1180_1990_mkbk
+[value] tests/idct/ieee_1180_1990.c:212: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:213: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:214: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:236: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:237: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:238: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:257: 
+  Reusing old results for call to IEEE_1180_1990_mkbk
+[value] tests/idct/ieee_1180_1990.c:258: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:259: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:260: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:282: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:283: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:284: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:303: 
+  Reusing old results for call to IEEE_1180_1990_mkbk
+[value] tests/idct/ieee_1180_1990.c:304: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:305: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:306: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:328: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:329: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:330: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:211: 
+  Reusing old results for call to IEEE_1180_1990_mkbk
+[value] tests/idct/ieee_1180_1990.c:212: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:213: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:214: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:236: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:237: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:238: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:257: 
+  Reusing old results for call to IEEE_1180_1990_mkbk
+[value] tests/idct/ieee_1180_1990.c:258: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:259: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:260: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:282: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:283: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:284: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:303: 
+  Reusing old results for call to IEEE_1180_1990_mkbk
+[value] tests/idct/ieee_1180_1990.c:304: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:305: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:306: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:328: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:329: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:330: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:211: 
+  Reusing old results for call to IEEE_1180_1990_mkbk
+[value] tests/idct/ieee_1180_1990.c:212: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:213: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:214: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:236: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:237: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:238: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:257: 
+  Reusing old results for call to IEEE_1180_1990_mkbk
+[value] tests/idct/ieee_1180_1990.c:258: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:259: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:260: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:282: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:283: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:284: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:303: 
+  Reusing old results for call to IEEE_1180_1990_mkbk
+[value] tests/idct/ieee_1180_1990.c:304: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:305: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:306: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:328: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:329: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:330: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:211: 
+  Reusing old results for call to IEEE_1180_1990_mkbk
+[value] tests/idct/ieee_1180_1990.c:212: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:213: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:214: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:236: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:237: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:238: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:257: 
+  Reusing old results for call to IEEE_1180_1990_mkbk
+[value] tests/idct/ieee_1180_1990.c:258: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:259: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:260: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:282: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:283: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:284: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:303: 
+  Reusing old results for call to IEEE_1180_1990_mkbk
+[value] tests/idct/ieee_1180_1990.c:304: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:305: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:306: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:328: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:329: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:330: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:211: 
+  Reusing old results for call to IEEE_1180_1990_mkbk
+[value] tests/idct/ieee_1180_1990.c:212: 
+  Reusing old results for call to IEEE_1180_1990_dctf
+[value] tests/idct/ieee_1180_1990.c:213: 
+  Reusing old results for call to IEEE_1180_1990_idctf
+[value] tests/idct/ieee_1180_1990.c:214: Reusing old results for call to idct
+[value] tests/idct/ieee_1180_1990.c:350: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:354: entering loop for the first time
+[value] tests/idct/ieee_1180_1990.c:355: entering loop for the first time
+[value:alarm] tests/idct/ieee_1180_1990.c:357: Warning: 
+  accessing uninitialized left-value. assert \initialized(&res[i].pmse[j][k]);
+[value:alarm] tests/idct/ieee_1180_1990.c:368: Warning: 
+  accessing uninitialized left-value. assert \initialized(&res[i].pme[j][k]);
+[value] tests/idct/ieee_1180_1990.c:369: Warning: 
+  2's complement assumed for overflow
+[value] tests/idct/ieee_1180_1990.c:357: Warning: 
+  2's complement assumed for overflow
+[value:alarm] tests/idct/ieee_1180_1990.c:358: Warning: 
+  accessing uninitialized left-value. assert \initialized(&res[i].pmse[j][k]);
+[value] tests/idct/ieee_1180_1990.c:368: Warning: 
+  2's complement assumed for overflow
+[value:alarm] tests/idct/ieee_1180_1990.c:369: Warning: 
+  accessing uninitialized left-value. assert \initialized(&res[i].pme[j][k]);
+[value:alarm] tests/idct/ieee_1180_1990.c:369: Warning: 
+  accessing uninitialized left-value. assert \initialized(&res[i].pme[j][k]);
+[value:alarm] tests/idct/ieee_1180_1990.c:369: Warning: 
+  accessing uninitialized left-value. assert \initialized(&res[i].pme[j][k]);
+[value] tests/idct/ieee_1180_1990.c:389: Warning: 
+  2's complement assumed for overflow
+[value] Recording results for main
+[value] done for function main
+[scope:rm_asserts] removing 16 assertion(s)
+[value] ====== VALUES COMPUTED ======
+[value:final-states] Values at end of function IEEE_1180_1990_rand:
+  i ∈ [0..2147483646]
+  j ∈ [0..600]
+  x ∈ [0.0000000000000000 .. 600.9999997201375663]
+  IEEE_1180_1990_rand_randx ∈ [--..--]
+  __retres ∈ [-300..300]
+[value:final-states] Values at end of function IEEE_1180_1990_mkbk:
+  i ∈ {8}
+  j ∈ {8} or UNINITIALIZED
+  M1[0..7][0..7] ∈ [--..--]
+  IEEE_1180_1990_rand_randx ∈ [--..--]
+[value:final-states] Values at end of function IEEE_1180_1990_dctf:
+  i ∈ {8}
+  j ∈ {8} or UNINITIALIZED
+  k ∈ {8} or UNINITIALIZED
+  tmp1[0..7][0..7] ∈
+      [-1.9999998807907104*2^127 .. 1.9999998807907104*2^127] or UNINITIALIZED
+  tmp2[0..7][0..7] ∈
+      [-1.6867516709168837*2^265 .. 1.6867516709168837*2^265] or UNINITIALIZED
+  m2[0..7][0..7] ∈ [--..--] or UNINITIALIZED
+  IEEE_1180_1990_dctf_mcos[0..7][0..7] ∈
+                          [-1.0000000000000000*2^-1 .. 1.0000000000000000*2^-1]
+  IEEE_1180_1990_dctf_init ∈ {0}
+[value:final-states] Values at end of function IEEE_1180_1990_idctf:
+  i ∈ {8}
+  j ∈ {8} or UNINITIALIZED
+  k ∈ {8} or UNINITIALIZED
+  tmp1[0..7][0..7] ∈
+      [-1.9999998807907104*2^127 .. 1.9999998807907104*2^127] or UNINITIALIZED
+  tmp2[0..7][0..7] ∈
+      [-1.6867516709168837*2^265 .. 1.6867516709168837*2^265] or UNINITIALIZED
+  m3[0..7][0..7] ∈ [--..--] or UNINITIALIZED
+  IEEE_1180_1990_idctf_mcos[0..7][0..7] ∈
+                           [-1.0000000000000000*2^-1 .. 1.0000000000000000*2^-1]
+  IEEE_1180_1990_idctf_init ∈ {0}
+[value:final-states] Values at end of function idct:
+  m2[0..7][0..7] ∈ [--..--] or UNINITIALIZED
+  m4[0..7][0..7] ∈ [--..--] or UNINITIALIZED
+  i ∈ {8}
+  j ∈ {8} or UNINITIALIZED
+  k ∈ {8} or UNINITIALIZED
+  tmp1[0..7][0..7] ∈ [--..--] or UNINITIALIZED
+  tmp2[0..7][0..7] ∈ [--..--] or UNINITIALIZED
+  ftmp1 ∈
+       [-1.0000610351562500*2^13 .. 1.0000610351562500*2^13] or UNINITIALIZED
+  ftmp2 ∈
+       [-1.0000610351562500*2^13 .. 1.0000610351562500*2^13] or UNINITIALIZED
+  idct_init ∈ {0}
+  idct_mc1[0..7][0..7] ∈ [-8192..8192]
+  idct_mc2[0..7][0..7] ∈ [-8192..8192]
+[value:final-states] Values at end of function main:
+  res[0..5] ∈ [--..--] or UNINITIALIZED
+  i ∈ {6}
+  j ∈ {8}
+  k ∈ {8} or UNINITIALIZED
+  m2[0..7][0..7] ∈ [--..--] or UNINITIALIZED
+  m3[0..7][0..7] ∈ [--..--] or UNINITIALIZED
+  m4[0..7][0..7] ∈ [--..--] or UNINITIALIZED
+  succ ∈ {0; 1}
+  omse ∈ [--..--] or UNINITIALIZED
+  ome ∈ [--..--] or UNINITIALIZED
+  err ∈ [--..--] or UNINITIALIZED
+  M1[0..7][0..7] ∈ [--..--]
+  IEEE_1180_1990_rand_randx ∈ [--..--]
+  IEEE_1180_1990_dctf_mcos[0..7][0..7] ∈
+                          [-1.0000000000000000*2^-1 .. 1.0000000000000000*2^-1]
+  IEEE_1180_1990_dctf_init ∈ {0; 1}
+  IEEE_1180_1990_idctf_mcos[0..7][0..7] ∈
+                           [-1.0000000000000000*2^-1 .. 1.0000000000000000*2^-1]
+  IEEE_1180_1990_idctf_init ∈ {0; 1}
+  idct_init ∈ {0}
+  idct_mc1[0..7][0..7] ∈ [-8192..8192]
+  idct_mc2[0..7][0..7] ∈ [-8192..8192]
+  __retres ∈ {0; 1}
+  S___fc_stdout[0..1] ∈ [--..--]
+[from] Computing for function IEEE_1180_1990_rand
+[from] Done for function IEEE_1180_1990_rand
+[from] Computing for function IEEE_1180_1990_mkbk
+[from] Done for function IEEE_1180_1990_mkbk
+[from] Computing for function IEEE_1180_1990_dctf
+[from] Computing for function sqrt <-IEEE_1180_1990_dctf
+[from] Done for function sqrt
+[from] Computing for function cos <-IEEE_1180_1990_dctf
+[from] Done for function cos
+[from] Done for function IEEE_1180_1990_dctf
+[from] Computing for function IEEE_1180_1990_idctf
+[from] Done for function IEEE_1180_1990_idctf
+[from] Computing for function idct
+[from] Done for function idct
+[from] Computing for function main
+[from] Computing for function printf_va_1 <-main
+[from] Done for function printf_va_1
+[from] Computing for function printf_va_2 <-main
+[from] Done for function printf_va_2
+[from] Done for function main
+[from] ====== DEPENDENCIES COMPUTED ======
+  These dependencies hold at termination for the executions that terminate:
+[from] Function IEEE_1180_1990_rand:
+  IEEE_1180_1990_rand_randx FROM IEEE_1180_1990_rand_randx
+  \result FROM L; H; IEEE_1180_1990_rand_randx; IEEE_1180_1990_rand_z
+[from] Function IEEE_1180_1990_mkbk:
+  M1[0..7][0..7] FROM min; max; IEEE_1180_1990_rand_randx;
+                      IEEE_1180_1990_rand_z (and SELF)
+  IEEE_1180_1990_rand_randx FROM IEEE_1180_1990_rand_randx (and SELF)
+[from] Function cos:
+  \result FROM x
+[from] Function printf_va_1:
+  S___fc_stdout[0].__fc_FILE_data
+               FROM S___fc_stdout[0];
+                    "For all-zero input, the proposed IDCT shall generate all-zero "[bits 0 to 503] (and SELF)
+  \result FROM S___fc_stdout[0];
+               "For all-zero input, the proposed IDCT shall generate all-zero "[bits 0 to 503]
+[from] Function printf_va_2:
+  S___fc_stdout[0].__fc_FILE_data
+               FROM S___fc_stdout[0]; "output.\n"[bits 0 to 71] (and SELF)
+  \result FROM S___fc_stdout[0]; "output.\n"[bits 0 to 71]
+[from] Function sqrt:
+  \result FROM x
+[from] Function IEEE_1180_1990_dctf:
+  m2[0..7][0..7] FROM m1; m2; M1[0..7][0..7];
+                      IEEE_1180_1990_dctf_mcos[0..7][0..7];
+                      IEEE_1180_1990_dctf_init (and SELF)
+  IEEE_1180_1990_dctf_mcos[0..7][0..7] FROM IEEE_1180_1990_dctf_init (and SELF)
+  IEEE_1180_1990_dctf_init FROM IEEE_1180_1990_dctf_init (and SELF)
+[from] Function IEEE_1180_1990_idctf:
+  m3[0..7][0..7] FROM m1; m2; m2[0..7][0..7];
+                      IEEE_1180_1990_idctf_mcos[0..7][0..7];
+                      IEEE_1180_1990_idctf_init (and SELF)
+  IEEE_1180_1990_idctf_mcos[0..7][0..7] FROM IEEE_1180_1990_idctf_init (and SELF)
+  IEEE_1180_1990_idctf_init FROM IEEE_1180_1990_idctf_init (and SELF)
+[from] Function idct:
+  m2[0..7][0..7] FROM m2[0..7][0..7]; m1; m2; M1[0..7][0..7]; idct_init;
+                      idct_mc1[0..7][0..7]; idct_mc2[0..7][0..7] (and SELF)
+  m4[0..7][0..7] FROM m2[0..7][0..7]; m1; m2; M1[0..7][0..7]; idct_init;
+                      idct_mc1[0..7][0..7]; idct_mc2[0..7][0..7] (and SELF)
+  idct_init FROM idct_init (and SELF)
+  idct_mc1[0..7][0..7] FROM idct_init (and SELF)
+  idct_mc2[0..7][0..7] FROM idct_init (and SELF)
+[from] Function main:
+  M1[0..7][0..7] FROM M1[0..7][0..7]; IEEE_1180_1990_rand_randx;
+                      IEEE_1180_1990_rand_z (and SELF)
+  IEEE_1180_1990_rand_randx FROM IEEE_1180_1990_rand_randx (and SELF)
+  IEEE_1180_1990_dctf_mcos[0..7][0..7] FROM IEEE_1180_1990_dctf_init (and SELF)
+  IEEE_1180_1990_dctf_init FROM IEEE_1180_1990_dctf_init (and SELF)
+  IEEE_1180_1990_idctf_mcos[0..7][0..7] FROM IEEE_1180_1990_idctf_init (and SELF)
+  IEEE_1180_1990_idctf_init FROM IEEE_1180_1990_idctf_init (and SELF)
+  idct_init FROM idct_init (and SELF)
+  idct_mc1[0..7][0..7] FROM idct_init (and SELF)
+  idct_mc2[0..7][0..7] FROM idct_init (and SELF)
+  S___fc_stdout[0].__fc_FILE_data
+               FROM M1[0..7][0..7]; idct_init; idct_mc1[0..7][0..7];
+                    idct_mc2[0..7][0..7]; S___fc_stdout[0];
+                    "For all-zero input, the proposed IDCT shall generate all-zero "[bits 0 to 503];
+                     "output.\n"[bits 0 to 71] (and SELF)
+  \result FROM M1[0..7][0..7]; IEEE_1180_1990_rand_randx;
+               IEEE_1180_1990_rand_z; IEEE_1180_1990_dctf_mcos[0..7][0..7];
+               IEEE_1180_1990_dctf_init;
+               IEEE_1180_1990_idctf_mcos[0..7][0..7];
+               IEEE_1180_1990_idctf_init; idct_init; idct_mc1[0..7][0..7];
+               idct_mc2[0..7][0..7]
+[from] ====== END OF DEPENDENCIES ======
+[inout] Out (internal) for function IEEE_1180_1990_rand:
+    i; j; x; IEEE_1180_1990_rand_randx; __retres
+[inout] Inputs for function IEEE_1180_1990_rand:
+    IEEE_1180_1990_rand_randx; IEEE_1180_1990_rand_z
+[inout] Out (internal) for function IEEE_1180_1990_mkbk:
+    i; j; M1[0..7][0..7]; IEEE_1180_1990_rand_randx
+[inout] Inputs for function IEEE_1180_1990_mkbk:
+    IEEE_1180_1990_rand_randx; IEEE_1180_1990_rand_z
+[inout] Out (internal) for function IEEE_1180_1990_dctf:
+    i; j; k; tmp1[0..7][0..7]; tmp2[0..7][0..7]; tmp; tmp_0; tmp_1;
+    m2[0..7][0..7]; IEEE_1180_1990_dctf_mcos[0..7][0..7];
+    IEEE_1180_1990_dctf_init
+[inout] Inputs for function IEEE_1180_1990_dctf:
+    M1[0..7][0..7]; IEEE_1180_1990_dctf_mcos[0..7][0..7];
+    IEEE_1180_1990_dctf_init
+[inout] Out (internal) for function IEEE_1180_1990_idctf:
+    i; j; k; tmp1[0..7][0..7]; tmp2[0..7][0..7]; tmp; tmp_0; tmp_1;
+    m3[0..7][0..7]; IEEE_1180_1990_idctf_mcos[0..7][0..7];
+    IEEE_1180_1990_idctf_init
+[inout] Inputs for function IEEE_1180_1990_idctf:
+    m2[0..7][0..7]; IEEE_1180_1990_idctf_mcos[0..7][0..7];
+    IEEE_1180_1990_idctf_init
+[inout] Out (internal) for function idct:
+    m2[0..7][0..7]; m4[0..7][0..7]; i; j; k; tmp1[0..7][0..7];
+    tmp2[0..7][0..7]; ftmp1; ftmp2; tmp; tmp_0; tmp_1; idct_init;
+    idct_mc1[0..7][0..7]; idct_mc2[0..7][0..7]
+[inout] Inputs for function idct:
+    m2[0..7][0..7]; M1[0..7][0..7]; idct_init; idct_mc1[0..7][0..7];
+    idct_mc2[0..7][0..7]
+[inout] Out (internal) for function main:
+    res[0..5]; i; j; k; m2[0..7][0..7]; m3[0..7][0..7]; m4[0..7][0..7]; 
+    succ; omse; ome; err; tmp; tmp_0; tmp_1; tmp_2; tmp_3; tmp_4; tmp_5; 
+    tmp_6; M1[0..7][0..7]; IEEE_1180_1990_rand_randx;
+    IEEE_1180_1990_dctf_mcos[0..7][0..7]; IEEE_1180_1990_dctf_init;
+    IEEE_1180_1990_idctf_mcos[0..7][0..7]; IEEE_1180_1990_idctf_init;
+    idct_init; idct_mc1[0..7][0..7]; idct_mc2[0..7][0..7]; __retres;
+    S___fc_stdout[0].__fc_FILE_data
+[inout] Inputs for function main:
+    M1[0..7][0..7]; IEEE_1180_1990_rand_randx; IEEE_1180_1990_rand_z;
+    IEEE_1180_1990_dctf_mcos[0..7][0..7]; IEEE_1180_1990_dctf_init;
+    IEEE_1180_1990_idctf_mcos[0..7][0..7]; IEEE_1180_1990_idctf_init;
+    idct_init; idct_mc1[0..7][0..7]; idct_mc2[0..7][0..7]; S___fc_stdout[0];
+    "For all-zero input, the proposed IDCT shall generate all-zero "[bits 0 to 503];
+     "output.\n"[bits 0 to 71]
+[report] Computing properties status...
+--------------------------------------------------------------------------------
+--- Global Properties
+--------------------------------------------------------------------------------
+
+[ Extern  ] Axiom 'memchr_def'
+            axiom memchr_def
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'memcmp_strlen_left'
+            axiom memcmp_strlen_left
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'memcmp_strlen_right'
+            axiom memcmp_strlen_right
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'memcmp_strlen_shift_left'
+            axiom memcmp_strlen_shift_left
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'memcmp_strlen_shift_right'
+            axiom memcmp_strlen_shift_right
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'memcmp_zero'
+            axiom memcmp_zero
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'memset_def'
+            axiom memset_def
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'strchr_def'
+            axiom strchr_def
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'strcmp_zero'
+            axiom strcmp_zero
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'strlen_at_null'
+            axiom strlen_at_null
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'strlen_before_null'
+            axiom strlen_before_null
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'strlen_create'
+            axiom strlen_create
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'strlen_create_shift'
+            axiom strlen_create_shift
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'strlen_neg'
+            axiom strlen_neg
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'strlen_not_zero'
+            axiom strlen_not_zero
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'strlen_pos_or_null'
+            axiom strlen_pos_or_null
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'strlen_shift'
+            axiom strlen_shift
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'strlen_sup'
+            axiom strlen_sup
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'strlen_zero'
+            axiom strlen_zero
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'strncmp_zero'
+            axiom strncmp_zero
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'wcscmp_zero'
+            axiom wcscmp_zero
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'wcslen_at_null'
+            axiom wcslen_at_null
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'wcslen_before_null'
+            axiom wcslen_before_null
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'wcslen_create'
+            axiom wcslen_create
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'wcslen_create_shift'
+            axiom wcslen_create_shift
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'wcslen_neg'
+            axiom wcslen_neg
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'wcslen_not_zero'
+            axiom wcslen_not_zero
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'wcslen_pos_or_null'
+            axiom wcslen_pos_or_null
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'wcslen_shift'
+            axiom wcslen_shift
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'wcslen_sup'
+            axiom wcslen_sup
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'wcslen_zero'
+            axiom wcslen_zero
+            Unverifiable but considered Valid.
+[ Extern  ] Axiom 'wcsncmp_zero'
+            axiom wcsncmp_zero
+            Unverifiable but considered Valid.
+[  Valid  ] Axiomatic 'MemChr'
+            axiomatic MemChr
+            by Frama-C kernel.
+[  Valid  ] Axiomatic 'MemCmp'
+            axiomatic MemCmp
+            by Frama-C kernel.
+[  Valid  ] Axiomatic 'MemSet'
+            axiomatic MemSet
+            by Frama-C kernel.
+[  Valid  ] Axiomatic 'StrChr'
+            axiomatic StrChr
+            by Frama-C kernel.
+[  Valid  ] Axiomatic 'StrCmp'
+            axiomatic StrCmp
+            by Frama-C kernel.
+[  Valid  ] Axiomatic 'StrLen'
+            axiomatic StrLen
+            by Frama-C kernel.
+[  Valid  ] Axiomatic 'StrNCmp'
+            axiomatic StrNCmp
+            by Frama-C kernel.
+[  Valid  ] Axiomatic 'WcsCmp'
+            axiomatic WcsCmp
+            by Frama-C kernel.
+[  Valid  ] Axiomatic 'WcsLen'
+            axiomatic WcsLen
+            by Frama-C kernel.
+[  Valid  ] Axiomatic 'WcsNCmp'
+            axiomatic WcsNCmp
+            by Frama-C kernel.
+[  Valid  ] Axiomatic 'format_length'
+            axiomatic format_length
+            by Frama-C kernel.
+[  Valid  ] Axiomatic 'pipe_streams'
+            axiomatic pipe_streams
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'remove'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'rename'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'tmpfile'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'result_null_or_valid_fd'
+            ensures
+            result_null_or_valid_fd:
+              \result ≡ \null ∨
+              \subset(\result, &__fc_fopen[0 .. 16 - 1])
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 79)
+            assigns \result \from __fc_p_fopen;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'tmpnam'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 86)
+            assigns \result, *(s + (..));
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 86)
+            assigns \result \from *(s + (..));
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 87)
+            assigns *(s + (..)) \from \nothing;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'fclose'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'result_zero_or_EOF'
+            ensures result_zero_or_EOF: \result ≡ 0 ∨ \result ≡ -1
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 94)
+            assigns \result \from stream, stream->__fc_FILE_id;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'fflush'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'result_zero_or_EOF'
+            ensures result_zero_or_EOF: \result ≡ 0 ∨ \result ≡ -1
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 102)
+            assigns \result \from stream, stream->__fc_FILE_id;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'fopen'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'result_null_or_valid_fd'
+            ensures
+            result_null_or_valid_fd:
+              \result ≡ \null ∨
+              \subset(\result, &__fc_fopen[0 .. 16 - 1])
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 110)
+            assigns \result
+              \from (indirect: *(filename + (..))),
+                    (indirect: *(mode + (..))), __fc_p_fopen;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'fdopen'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'result_null_or_valid_fd'
+            ensures
+            result_null_or_valid_fd:
+              \result ≡ \null ∨
+              \subset(\result, &__fc_fopen[0 .. 16 - 1])
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns (file share/libc/stdio.h, line 118)
+            assigns \result, __fc_fopen[fd];
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 118)
+            assigns \result
+              \from (indirect: fd), (indirect: *(mode + (0 ..))),
+                    (indirect: __fc_fopen[fd]), __fc_p_fopen;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 118)
+            assigns __fc_fopen[fd]
+              \from (indirect: fd), (indirect: *(mode + (0 ..))),
+                    (indirect: __fc_fopen[fd]), __fc_p_fopen;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'freopen'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'result_null_or_same'
+            ensures
+            result_null_or_same:
+              \result ≡ \null ∨ \result ≡ \old(stream)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns (file share/libc/stdio.h, line 126)
+            assigns *stream;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'setbuf'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 133)
+            assigns *stream;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 133)
+            assigns *stream \from buf;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'setvbuf'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 137)
+            assigns *stream;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 137)
+            assigns *stream \from buf, mode, size;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'vfprintf'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 166)
+            assigns *stream;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 166)
+            assigns *stream \from *(format + (..)), arg;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'vfscanf'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 171)
+            assigns *stream;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 171)
+            assigns *stream \from *(format + (..)), *stream;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'vprintf'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 177)
+            assigns *__fc_stdout;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 177)
+            assigns *__fc_stdout \from arg;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'vscanf'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 181)
+            assigns *__fc_stdin;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 181)
+            assigns *__fc_stdin \from *(format + (..));
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'vsnprintf'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 186)
+            assigns *(s + (0 .. n - 1));
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 186)
+            assigns *(s + (0 .. n - 1)) \from *(format + (..)), arg;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'vsprintf'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 192)
+            assigns *(s + (0 ..));
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 192)
+            assigns *(s + (0 ..)) \from *(format + (..)), arg;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'fgetc'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 203)
+            assigns *stream;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'fgets'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'result_null_or_same'
+            ensures
+            result_null_or_same: \result ≡ \null ∨ \result ≡ \old(s)
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition 'terminated_string_on_success'
+            ensures
+            terminated_string_on_success:
+              \result ≢ \null ⇒ valid_string(\old(s))
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns (file share/libc/stdio.h, line 209)
+            assigns *(s + (0 .. size)), \result;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 209)
+            assigns *(s + (0 .. size))
+              \from (indirect: size), (indirect: *stream);
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 210)
+            assigns \result \from s, (indirect: size), (indirect: *stream);
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'fputc'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 218)
+            assigns *stream;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'fputs'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 221)
+            assigns *stream;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 221)
+            assigns *stream \from *(s + (..));
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'getc'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 225)
+            assigns \result, *stream;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 225)
+            assigns \result \from *stream;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 225)
+            assigns *stream \from *stream;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'getchar'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 228)
+            assigns \result \from *__fc_stdin;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'gets'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'result_null_or_same'
+            ensures
+            result_null_or_same: \result ≡ \old(s) ∨ \result ≡ \null
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns (file share/libc/stdio.h, line 232)
+            assigns *(s + (..)), \result;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 232)
+            assigns *(s + (..)) \from *__fc_stdin;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 233)
+            assigns \result \from s, __fc_stdin;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'putc'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 238)
+            assigns *stream;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 238)
+            assigns *stream \from c;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'putchar'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 241)
+            assigns *__fc_stdout;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 241)
+            assigns *__fc_stdout \from c;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'puts'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 244)
+            assigns *__fc_stdout;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 244)
+            assigns *__fc_stdout \from *(s + (..));
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'ungetc'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 247)
+            assigns *stream;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 247)
+            assigns *stream \from c;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'fread'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'size_read'
+            ensures size_read: \result ≤ \old(nmemb)
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition 'initialization'
+            ensures
+            initialization:
+              \initialized((char *)\old(ptr) +
+                           (0 .. \result * \old(size) - 1))
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns (file share/libc/stdio.h, line 253)
+            assigns *((char *)ptr + (0 .. nmemb * size - 1)), \result;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 253)
+            assigns *((char *)ptr + (0 .. nmemb * size - 1))
+              \from size, nmemb, *stream;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 254)
+            assigns \result \from size, *stream;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'fwrite'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'size_written'
+            ensures size_written: \result ≤ \old(nmemb)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns (file share/libc/stdio.h, line 266)
+            assigns *stream, \result;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 266)
+            assigns *stream \from *((char *)ptr + (0 .. nmemb * size - 1));
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 266)
+            assigns \result \from *((char *)ptr + (0 .. nmemb * size - 1));
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'fgetpos'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 274)
+            assigns *pos;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 274)
+            assigns *pos \from *stream;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'fseek'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 281)
+            assigns *stream, \result, __fc_errno;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 281)
+            assigns *stream
+              \from *stream, (indirect: offset), (indirect: whence);
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 282)
+            assigns \result
+              \from (indirect: *stream), (indirect: offset),
+                    (indirect: whence);
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 282)
+            assigns __fc_errno
+              \from (indirect: *stream), (indirect: offset),
+                    (indirect: whence);
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'fsetpos'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 287)
+            assigns *stream;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 287)
+            assigns *stream \from *pos;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'ftell'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'success_or_error'
+            ensures
+            success_or_error:
+              \result ≡ -1 ∨
+              (\result ≥ 0 ∧ __fc_errno ≡ \old(__fc_errno))
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns (file share/libc/stdio.h, line 292)
+            assigns \result, __fc_errno;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 292)
+            assigns \result \from (indirect: *stream);
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 292)
+            assigns __fc_errno \from (indirect: *stream);
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'rewind'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 298)
+            assigns *stream;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 298)
+            assigns *stream \from \nothing;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'clearerr'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 301)
+            assigns *stream;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 301)
+            assigns *stream \from \nothing;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'feof'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 304)
+            assigns \result \from *stream;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'fileno'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 307)
+            assigns \result \from *stream;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'flockfile'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 310)
+            assigns *stream;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 310)
+            assigns *stream \from \nothing;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'funlockfile'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 313)
+            assigns *stream;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 313)
+            assigns *stream \from \nothing;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'ftrylockfile'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 316)
+            assigns \result, *stream;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 316)
+            assigns \result \from \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 316)
+            assigns *stream \from \nothing;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'ferror'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 319)
+            assigns \result \from *stream;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'perror'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 322)
+            assigns __fc_stdout;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 322)
+            assigns __fc_stdout \from __fc_errno, *(s + (..));
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'getc_unlocked'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 325)
+            assigns \result, *stream;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 325)
+            assigns \result \from *stream;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 325)
+            assigns *stream \from *stream;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'getchar_unlocked'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 327)
+            assigns \result \from *__fc_stdin;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'putc_unlocked'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 329)
+            assigns *stream;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 329)
+            assigns *stream \from c;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'putchar_unlocked'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 331)
+            assigns *__fc_stdout;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 331)
+            assigns *__fc_stdout \from c;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'clearerr_unlocked'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns (file share/libc/stdio.h, line 334)
+            assigns *stream;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 334)
+            assigns *stream \from \nothing;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'feof_unlocked'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 336)
+            assigns \result \from *stream;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'ferror_unlocked'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 338)
+            assigns \result \from *stream;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'fileno_unlocked'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 340)
+            assigns \result \from *stream;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'popen'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'result_error_or_valid_open_pipe'
+            ensures
+            result_error_or_valid_open_pipe:
+              \result ≡ \null ∨
+              (\subset(\result, &__fc_fopen[0 .. 16 - 1]) ∧
+               is_open_pipe(\result))
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns (file share/libc/stdio.h, line 365)
+            assigns \result, __fc_fopen[0 ..];
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 365)
+            assigns \result
+              \from (indirect: *command), (indirect: *type), __fc_p_fopen;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 367)
+            assigns __fc_fopen[0 ..]
+              \from (indirect: *command), (indirect: *type), __fc_fopen[0 ..];
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'pclose'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'closed_stream'
+            ensures closed_stream: ¬is_open_pipe(\old(stream))
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/stdio.h, line 379)
+            assigns \result \from (indirect: *stream);
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'acos'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition for 'normal' 'positive_result'
+            ensures positive_result: \is_finite(\result) ∧ \result ≥ 0
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition for 'domain_error' 'errno_set'
+            ensures errno_set: __fc_errno ≡ 1
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns (file share/libc/math.h, line 65)
+            assigns __fc_errno, \result;
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns for 'domain_error' (file share/libc/math.h, line 72)
+            assigns __fc_errno, \result;
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns for 'normal' nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 65)
+            assigns __fc_errno \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 65)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'domain_error' (file share/libc/math.h, line 72)
+            assigns __fc_errno \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'domain_error' (file share/libc/math.h, line 72)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'normal' (file share/libc/math.h, line 68)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+[  Valid  ] Behavior 'domain_error'
+            behavior domain_error
+            by Frama-C kernel.
+[  Valid  ] Behavior 'normal'
+            behavior normal
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'acosf'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition for 'normal' 'positive_result'
+            ensures positive_result: \is_finite(\result) ∧ \result ≥ 0
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition for 'domain_error' 'errno_set'
+            ensures errno_set: __fc_errno ≡ 1
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns (file share/libc/math.h, line 79)
+            assigns __fc_errno, \result;
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns for 'domain_error' (file share/libc/math.h, line 86)
+            assigns __fc_errno, \result;
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns for 'normal' nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 79)
+            assigns __fc_errno \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 79)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'domain_error' (file share/libc/math.h, line 86)
+            assigns __fc_errno \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'domain_error' (file share/libc/math.h, line 86)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'normal' (file share/libc/math.h, line 82)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+[  Valid  ] Behavior 'domain_error'
+            behavior domain_error
+            by Frama-C kernel.
+[  Valid  ] Behavior 'normal'
+            behavior normal
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'acosl'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition for 'normal' 'positive_result'
+            ensures positive_result: \is_finite(\result) ∧ \result ≥ 0
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition for 'domain_error' 'errno_set'
+            ensures errno_set: __fc_errno ≡ 1
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns (file share/libc/math.h, line 93)
+            assigns __fc_errno, \result;
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns for 'domain_error' (file share/libc/math.h, line 100)
+            assigns __fc_errno, \result;
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns for 'normal' nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 93)
+            assigns __fc_errno \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 93)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'domain_error' (file share/libc/math.h, line 100)
+            assigns __fc_errno \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'domain_error' (file share/libc/math.h, line 100)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'normal' (file share/libc/math.h, line 96)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+[  Valid  ] Behavior 'domain_error'
+            behavior domain_error
+            by Frama-C kernel.
+[  Valid  ] Behavior 'normal'
+            behavior normal
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'asin'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition for 'normal' 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition for 'domain_error' 'errno_set'
+            ensures errno_set: __fc_errno ≡ 1
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns (file share/libc/math.h, line 107)
+            assigns __fc_errno, \result;
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns for 'domain_error' (file share/libc/math.h, line 114)
+            assigns __fc_errno, \result;
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns for 'normal' nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 107)
+            assigns __fc_errno \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 107)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'domain_error' (file share/libc/math.h, line 114)
+            assigns __fc_errno \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'domain_error' (file share/libc/math.h, line 114)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'normal' (file share/libc/math.h, line 110)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+[  Valid  ] Behavior 'domain_error'
+            behavior domain_error
+            by Frama-C kernel.
+[  Valid  ] Behavior 'normal'
+            behavior normal
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'asinf'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition for 'normal' 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition for 'domain_error' 'errno_set'
+            ensures errno_set: __fc_errno ≡ 1
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns (file share/libc/math.h, line 121)
+            assigns __fc_errno, \result;
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns for 'domain_error' (file share/libc/math.h, line 128)
+            assigns __fc_errno, \result;
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns for 'normal' nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 121)
+            assigns __fc_errno \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 121)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'domain_error' (file share/libc/math.h, line 128)
+            assigns __fc_errno \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'domain_error' (file share/libc/math.h, line 128)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'normal' (file share/libc/math.h, line 124)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+[  Valid  ] Behavior 'domain_error'
+            behavior domain_error
+            by Frama-C kernel.
+[  Valid  ] Behavior 'normal'
+            behavior normal
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'asinl'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition for 'normal' 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition for 'domain_error' 'errno_set'
+            ensures errno_set: __fc_errno ≡ 1
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns (file share/libc/math.h, line 135)
+            assigns __fc_errno, \result;
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns for 'domain_error' (file share/libc/math.h, line 142)
+            assigns __fc_errno, \result;
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns for 'normal' nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 135)
+            assigns __fc_errno \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 135)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'domain_error' (file share/libc/math.h, line 142)
+            assigns __fc_errno \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'domain_error' (file share/libc/math.h, line 142)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'normal' (file share/libc/math.h, line 138)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+[  Valid  ] Behavior 'domain_error'
+            behavior domain_error
+            by Frama-C kernel.
+[  Valid  ] Behavior 'normal'
+            behavior normal
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'atanf'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition 'result_domain'
+            ensures result_domain: -1.571 ≤ \result ≤ 1.571
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 149)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'atan'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition 'result_domain'
+            ensures result_domain: -1.571 ≤ \result ≤ 1.571
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 156)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'atanl'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition 'result_domain'
+            ensures result_domain: -1.571 ≤ \result ≤ 1.571
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 163)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'atan2'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 171)
+            assigns \result \from x, y;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'atan2f'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 178)
+            assigns \result \from x, y;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'cos'
+--------------------------------------------------------------------------------
+
+[  Valid  ] Pre-condition 'finite_arg'
+            requires finite_arg: \is_finite(x)
+            by Call Preconditions.
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition 'result_domain'
+            ensures result_domain: -1. ≤ \result ≤ 1.
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 186)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'cosf'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition 'result_domain'
+            ensures result_domain: -1. ≤ \result ≤ 1.
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 193)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'cosl'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition 'result_domain'
+            ensures result_domain: -1. ≤ \result ≤ 1.
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 200)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'sin'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition 'result_domain'
+            ensures result_domain: -1. ≤ \result ≤ 1.
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 207)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'sinf'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition 'result_domain'
+            ensures result_domain: -1. ≤ \result ≤ 1.
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 214)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'sinl'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition 'result_domain'
+            ensures result_domain: -1. ≤ \result ≤ 1.
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 221)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'acosh'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition for 'normal' 'positive_result'
+            ensures positive_result: \is_finite(\result) ∧ \result ≥ 0
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition for 'infinite' 'result_plus_infinity'
+            ensures result_plus_infinity: \is_plus_infinity(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition for 'domain_error' 'errno_set'
+            ensures errno_set: __fc_errno ≡ 1
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns (file share/libc/math.h, line 232)
+            assigns __fc_errno, \result;
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns for 'domain_error' (file share/libc/math.h, line 243)
+            assigns __fc_errno, \result;
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns for 'infinite' nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns for 'normal' nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 232)
+            assigns __fc_errno \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 232)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'domain_error' (file share/libc/math.h, line 243)
+            assigns __fc_errno \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'domain_error' (file share/libc/math.h, line 243)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'infinite' (file share/libc/math.h, line 239)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'normal' (file share/libc/math.h, line 235)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+[  Valid  ] Behavior 'domain_error'
+            behavior domain_error
+            by Frama-C kernel.
+[  Valid  ] Behavior 'infinite'
+            behavior infinite
+            by Frama-C kernel.
+[  Valid  ] Behavior 'normal'
+            behavior normal
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'acoshf'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition for 'normal' 'positive_result'
+            ensures positive_result: \is_finite(\result) ∧ \result ≥ 0
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition for 'infinite' 'result_plus_infinity'
+            ensures result_plus_infinity: \is_plus_infinity(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition for 'domain_error' 'errno_set'
+            ensures errno_set: __fc_errno ≡ 1
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns (file share/libc/math.h, line 250)
+            assigns __fc_errno, \result;
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns for 'domain_error' (file share/libc/math.h, line 261)
+            assigns __fc_errno, \result;
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns for 'infinite' nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns for 'normal' nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 250)
+            assigns __fc_errno \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 250)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'domain_error' (file share/libc/math.h, line 261)
+            assigns __fc_errno \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'domain_error' (file share/libc/math.h, line 261)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'infinite' (file share/libc/math.h, line 257)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'normal' (file share/libc/math.h, line 253)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+[  Valid  ] Behavior 'domain_error'
+            behavior domain_error
+            by Frama-C kernel.
+[  Valid  ] Behavior 'infinite'
+            behavior infinite
+            by Frama-C kernel.
+[  Valid  ] Behavior 'normal'
+            behavior normal
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'acoshl'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition for 'normal' 'positive_result'
+            ensures positive_result: \is_finite(\result) ∧ \result ≥ 0
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition for 'infinite' 'result_plus_infinity'
+            ensures result_plus_infinity: \is_plus_infinity(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition for 'domain_error' 'errno_set'
+            ensures errno_set: __fc_errno ≡ 1
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns (file share/libc/math.h, line 268)
+            assigns __fc_errno, \result;
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns for 'domain_error' (file share/libc/math.h, line 279)
+            assigns __fc_errno, \result;
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns for 'infinite' nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns for 'normal' nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 268)
+            assigns __fc_errno \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 268)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'domain_error' (file share/libc/math.h, line 279)
+            assigns __fc_errno \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'domain_error' (file share/libc/math.h, line 279)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'infinite' (file share/libc/math.h, line 275)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms for 'normal' (file share/libc/math.h, line 271)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+[  Valid  ] Behavior 'domain_error'
+            behavior domain_error
+            by Frama-C kernel.
+[  Valid  ] Behavior 'infinite'
+            behavior infinite
+            by Frama-C kernel.
+[  Valid  ] Behavior 'normal'
+            behavior normal
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'exp'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'res_finite'
+            ensures res_finite: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition 'positive_result'
+            ensures positive_result: \result > 0.
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 307)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'expf'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'res_finite'
+            ensures res_finite: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition 'positive_result'
+            ensures positive_result: \result > 0.
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 315)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'log'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 345)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'logf'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 352)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'logl'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 359)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'log10'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 366)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'log10f'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 373)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'log10l'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 380)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'log2'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 391)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'log2f'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 398)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'log2l'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 405)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'fabs'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'res_finite'
+            ensures res_finite: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition 'positive_result'
+            ensures positive_result: \result ≥ 0.
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition 'equal_magnitude_result'
+            ensures
+            equal_magnitude_result:
+              \result ≡ \old(x) ∨ \result ≡ -\old(x)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 431)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'fabsf'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'res_finite'
+            ensures res_finite: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition 'positive_result'
+            ensures positive_result: \result ≥ 0.
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition 'equal_magnitude_result'
+            ensures
+            equal_magnitude_result:
+              \result ≡ \old(x) ∨ \result ≡ -\old(x)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 439)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'fabsl'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'res_finite'
+            ensures res_finite: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition 'positive_result'
+            ensures positive_result: \result ≥ 0.
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition 'equal_magnitude_result'
+            ensures
+            equal_magnitude_result:
+              \result ≡ \old(x) ∨ \result ≡ -\old(x)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 447)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'pow'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 460)
+            assigns \result \from x, y;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'powf'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 467)
+            assigns \result \from x, y;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'sqrt'
+--------------------------------------------------------------------------------
+
+[  Valid  ] Pre-condition 'finite_arg'
+            requires finite_arg: \is_finite(x)
+            by Call Preconditions.
+[  Valid  ] Pre-condition 'arg_positive'
+            requires arg_positive: x ≥ -0.
+            by Call Preconditions.
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition 'positive_result'
+            ensures positive_result: \result ≥ -0.
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 476)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'sqrtf'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition 'positive_result'
+            ensures positive_result: \result ≥ -0.
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 484)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'sqrtl'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Post-condition 'positive_result'
+            ensures positive_result: \result ≥ -0.
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 492)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'ceil'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 515)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'ceilf'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 521)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'ceill'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 528)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'floor'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 534)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'floorf'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 540)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'floorl'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 546)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'round'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 568)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'roundf'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 574)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'roundl'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 580)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'trunc'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 594)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'truncf'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 600)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'truncl'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 606)
+            assigns \result \from x;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'fmod'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 613)
+            assigns \result \from x, y;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'fmodf'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'finite_result'
+            ensures finite_result: \is_finite(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 620)
+            assigns \result \from x, y;
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'nan'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'result_is_nan'
+            ensures result_is_nan: \is_NaN(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 641)
+            assigns \result \from (indirect: *(tagp + (0 ..)));
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'nanf'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'result_is_nan'
+            ensures result_is_nan: \is_NaN(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 648)
+            assigns \result \from (indirect: *(tagp + (0 ..)));
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'nanl'
+--------------------------------------------------------------------------------
+
+[ Extern  ] Post-condition 'result_is_nan'
+            ensures result_is_nan: \is_NaN(\result)
+            Unverifiable but considered Valid.
+[ Extern  ] Assigns nothing
+            assigns \nothing;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file share/libc/math.h, line 655)
+            assigns \result \from (indirect: *(tagp + (0 ..)));
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'idct'
+--------------------------------------------------------------------------------
+
+[    -    ] Assertion 'Value,initialization' (file tests/idct/idct.c, line 129)
+            assert Value: initialization: \initialized(&tmp1[i][j]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/idct.c, line 131)
+            assert Value: initialization: \initialized(&tmp1[i][j]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/idct.c, line 141)
+            assert Value: initialization: \initialized(&tmp1[i][j]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/idct.c, line 143)
+            assert Value: initialization: \initialized(&tmp1[i][j]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/idct.c, line 145)
+            assert Value: initialization: \initialized(&tmp1[i][j]);
+            tried with Value.
+[ Partial ] Assertion 'Value,initialization' (file tests/idct/idct.c, line 147)
+            assert Value: initialization: \initialized(&tmp1[i][j]);
+            By RedundantAlarms, with pending:
+             - Assertion 'Value,initialization' (file tests/idct/idct.c, line 145)
+[ Partial ] Assertion 'Value,initialization' (file tests/idct/idct.c, line 150)
+            assert Value: initialization: \initialized(&tmp1[i][j]);
+            By RedundantAlarms, with pending:
+             - Assertion 'Value,initialization' (file tests/idct/idct.c, line 145)
+[    -    ] Assertion 'Value,initialization' (file tests/idct/idct.c, line 163)
+            assert Value: initialization: \initialized(&tmp2[k][j]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/idct.c, line 163)
+            assert Value: initialization: \initialized(&tmp1[i][j]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/idct.c, line 166)
+            assert Value: initialization: \initialized(&tmp1[i][j]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/idct.c, line 176)
+            assert Value: initialization: \initialized(&tmp1[i][j]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/idct.c, line 178)
+            assert Value: initialization: \initialized(&tmp1[i][j]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/idct.c, line 180)
+            assert Value: initialization: \initialized(&tmp1[i][j]);
+            tried with Value.
+[ Partial ] Assertion 'Value,initialization' (file tests/idct/idct.c, line 182)
+            assert Value: initialization: \initialized(&tmp1[i][j]);
+            By RedundantAlarms, with pending:
+             - Assertion 'Value,initialization' (file tests/idct/idct.c, line 180)
+[ Partial ] Assertion 'Value,initialization' (file tests/idct/idct.c, line 185)
+            assert Value: initialization: \initialized(&tmp1[i][j]);
+            By RedundantAlarms, with pending:
+             - Assertion 'Value,initialization' (file tests/idct/idct.c, line 180)
+[    -    ] Assertion 'Value,initialization' (file tests/idct/idct.c, line 129)
+            assert Value: initialization: \initialized(&(*(m1 + k))[j]);
+            tried with Value.
+[  Valid  ] Instance of 'Pre-condition 'finite_arg'' at call 'sqrt' (file tests/idct/idct.c, line 90)
+
+            status of 'requires
+            finite_arg: \is_finite(x)' of sqrt at stmt 525
+            by Value.
+[  Valid  ] Instance of 'Pre-condition 'arg_positive'' at call 'sqrt' (file tests/idct/idct.c, line 90)
+
+            status of 'requires arg_positive: x ≥ -0.' of sqrt at stmt 525
+            by Value.
+[  Valid  ] Instance of 'Pre-condition 'finite_arg'' at call 'cos' (file tests/idct/idct.c, line 91)
+
+            status of 'requires finite_arg: \is_finite(x)' of cos at stmt 528
+            by Value.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'IEEE_1180_1990_dctf'
+--------------------------------------------------------------------------------
+
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 109)
+            assert Value: initialization: \initialized(&tmp1[i][j]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 116)
+            assert Value: initialization: \initialized(&tmp1[i][k]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 116)
+            assert Value: initialization: \initialized(&tmp2[i][j]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 117)
+            assert Value: initialization: \initialized(&tmp2[i][j]);
+            tried with Value.
+[ Partial ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 119)
+            assert Value: initialization: \initialized(&tmp2[i][j]);
+            By RedundantAlarms, with pending:
+             - Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 117)
+[ Partial ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 121)
+            assert Value: initialization: \initialized(&tmp2[i][j]);
+            By RedundantAlarms, with pending:
+             - Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 117)
+[ Partial ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 122)
+            assert Value: initialization: \initialized(&tmp2[i][j]);
+            By RedundantAlarms, with pending:
+             - Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 117)
+[    -    ] Assertion 'Value,float_to_int' (file tests/idct/ieee_1180_1990.c, line 122)
+            assert Value: float_to_int: -2147483649 < tmp2[i][j] + 0.5;
+            tried with Value.
+[    -    ] Assertion 'Value,float_to_int' (file tests/idct/ieee_1180_1990.c, line 122)
+            assert Value: float_to_int: tmp2[i][j] + 0.5 < 2147483648;
+            tried with Value.
+[ Partial ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 124)
+            assert Value: initialization: \initialized(&tmp2[i][j]);
+            By RedundantAlarms, with pending:
+             - Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 117)
+[    -    ] Assertion 'Value,float_to_int' (file tests/idct/ieee_1180_1990.c, line 124)
+            assert Value: float_to_int: -2147483649 < tmp2[i][j] - 0.5;
+            tried with Value.
+[    -    ] Assertion 'Value,float_to_int' (file tests/idct/ieee_1180_1990.c, line 124)
+            assert Value: float_to_int: tmp2[i][j] - 0.5 < 2147483648;
+            tried with Value.
+[  Valid  ] Instance of 'Pre-condition 'finite_arg'' at call 'sqrt' (file tests/idct/ieee_1180_1990.c, line 100)
+
+            status of 'requires finite_arg: \is_finite(x)' of sqrt at stmt 41
+            by Value.
+[  Valid  ] Instance of 'Pre-condition 'arg_positive'' at call 'sqrt' (file tests/idct/ieee_1180_1990.c, line 100)
+
+            status of 'requires arg_positive: x ≥ -0.' of sqrt at stmt 41
+            by Value.
+[  Valid  ] Instance of 'Pre-condition 'finite_arg'' at call 'cos' (file tests/idct/ieee_1180_1990.c, line 101)
+
+            status of 'requires finite_arg: \is_finite(x)' of cos at stmt 44
+            by Value.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'IEEE_1180_1990_idctf'
+--------------------------------------------------------------------------------
+
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 150)
+            assert Value: initialization: \initialized(&(*(m1 + k))[j]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 150)
+            assert Value: initialization: \initialized(&tmp1[i][j]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 157)
+            assert Value: initialization: \initialized(&tmp1[i][k]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 157)
+            assert Value: initialization: \initialized(&tmp2[i][j]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 158)
+            assert Value: initialization: \initialized(&tmp2[i][j]);
+            tried with Value.
+[ Partial ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 160)
+            assert Value: initialization: \initialized(&tmp2[i][j]);
+            By RedundantAlarms, with pending:
+             - Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 158)
+[ Partial ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 162)
+            assert Value: initialization: \initialized(&tmp2[i][j]);
+            By RedundantAlarms, with pending:
+             - Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 158)
+[ Partial ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 163)
+            assert Value: initialization: \initialized(&tmp2[i][j]);
+            By RedundantAlarms, with pending:
+             - Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 158)
+[    -    ] Assertion 'Value,float_to_int' (file tests/idct/ieee_1180_1990.c, line 163)
+            assert Value: float_to_int: -2147483649 < tmp2[i][j] + 0.5;
+            tried with Value.
+[    -    ] Assertion 'Value,float_to_int' (file tests/idct/ieee_1180_1990.c, line 163)
+            assert Value: float_to_int: tmp2[i][j] + 0.5 < 2147483648;
+            tried with Value.
+[ Partial ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 165)
+            assert Value: initialization: \initialized(&tmp2[i][j]);
+            By RedundantAlarms, with pending:
+             - Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 158)
+[    -    ] Assertion 'Value,float_to_int' (file tests/idct/ieee_1180_1990.c, line 165)
+            assert Value: float_to_int: -2147483649 < tmp2[i][j] - 0.5;
+            tried with Value.
+[    -    ] Assertion 'Value,float_to_int' (file tests/idct/ieee_1180_1990.c, line 165)
+            assert Value: float_to_int: tmp2[i][j] - 0.5 < 2147483648;
+            tried with Value.
+[  Valid  ] Instance of 'Pre-condition 'finite_arg'' at call 'sqrt' (file tests/idct/ieee_1180_1990.c, line 140)
+
+            status of 'requires
+            finite_arg: \is_finite(x)' of sqrt at stmt 121
+            by Value.
+[  Valid  ] Instance of 'Pre-condition 'arg_positive'' at call 'sqrt' (file tests/idct/ieee_1180_1990.c, line 140)
+
+            status of 'requires arg_positive: x ≥ -0.' of sqrt at stmt 121
+            by Value.
+[  Valid  ] Instance of 'Pre-condition 'finite_arg'' at call 'cos' (file tests/idct/ieee_1180_1990.c, line 141)
+
+            status of 'requires finite_arg: \is_finite(x)' of cos at stmt 124
+            by Value.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'main'
+--------------------------------------------------------------------------------
+
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 191)
+            assert Value: initialization: \initialized(&m2[i][j]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 218)
+            assert Value: initialization: \initialized(&m3[j][k]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 218)
+            assert Value: initialization: \initialized(&m4[j][k]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 219)
+            assert Value: initialization: \initialized(&res[0].pme[j][k]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 231)
+            assert Value: initialization: \initialized(&res[0].pmse[j][k]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 242)
+            assert Value: initialization: \initialized(&m3[j][k]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 242)
+            assert Value: initialization: \initialized(&m4[j][k]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 243)
+            assert Value: initialization: \initialized(&res[3].pme[j][k]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 255)
+            assert Value: initialization: \initialized(&res[3].pmse[j][k]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 264)
+            assert Value: initialization: \initialized(&m3[j][k]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 264)
+            assert Value: initialization: \initialized(&m4[j][k]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 265)
+            assert Value: initialization: \initialized(&res[1].pme[j][k]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 277)
+            assert Value: initialization: \initialized(&res[1].pmse[j][k]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 288)
+            assert Value: initialization: \initialized(&m3[j][k]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 288)
+            assert Value: initialization: \initialized(&m4[j][k]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 289)
+            assert Value: initialization: \initialized(&res[4].pme[j][k]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 301)
+            assert Value: initialization: \initialized(&res[4].pmse[j][k]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 310)
+            assert Value: initialization: \initialized(&m3[j][k]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 310)
+            assert Value: initialization: \initialized(&m4[j][k]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 311)
+            assert Value: initialization: \initialized(&res[2].pme[j][k]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 323)
+            assert Value: initialization: \initialized(&res[2].pmse[j][k]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 334)
+            assert Value: initialization: \initialized(&m3[j][k]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 334)
+            assert Value: initialization: \initialized(&m4[j][k]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 335)
+            assert Value: initialization: \initialized(&res[5].pme[j][k]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 347)
+            assert Value: initialization: \initialized(&res[5].pmse[j][k]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 357)
+            assert Value: initialization: \initialized(&res[i].pmse[j][k]);
+            tried with Value.
+[    -    ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 368)
+            assert Value: initialization: \initialized(&res[i].pme[j][k]);
+            tried with Value.
+[ Partial ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 358)
+            assert Value: initialization: \initialized(&res[i].pmse[j][k]);
+            By RedundantAlarms, with pending:
+             - Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 357)
+[ Partial ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 369)
+            assert Value: initialization: \initialized(&res[i].pme[j][k]);
+            By RedundantAlarms, with pending:
+             - Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 368)
+[ Partial ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 369)
+            assert Value: initialization: \initialized(&res[i].pme[j][k]);
+            By RedundantAlarms, with pending:
+             - Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 368)
+[ Partial ] Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 369)
+            assert Value: initialization: \initialized(&res[i].pme[j][k]);
+            By RedundantAlarms, with pending:
+             - Assertion 'Value,initialization' (file tests/idct/ieee_1180_1990.c, line 368)
+[  Valid  ] Instance of 'Pre-condition (file tests/idct/ieee_1180_1990.c, line 195)' at call 'printf_va_1' (file tests/idct/ieee_1180_1990.c, line 195)
+
+            status of 'requires
+            valid_read_string(format)' of printf_va_1 at stmt 238
+            by Value.
+[  Valid  ] Instance of 'Pre-condition (file tests/idct/ieee_1180_1990.c, line 196)' at call 'printf_va_2' (file tests/idct/ieee_1180_1990.c, line 196)
+
+            status of 'requires
+            valid_read_string(format)' of printf_va_2 at stmt 239
+            by Value.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'printf_va_1'
+--------------------------------------------------------------------------------
+
+[  Valid  ] Pre-condition (file tests/idct/ieee_1180_1990.c, line 195)
+            requires valid_read_string(format)
+            by Call Preconditions.
+[ Extern  ] Assigns (file tests/idct/ieee_1180_1990.c, line 195)
+            assigns \result, __fc_stdout->__fc_FILE_data;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file tests/idct/ieee_1180_1990.c, line 195)
+            assigns __fc_stdout->__fc_FILE_data
+              \from (indirect: __fc_stdout->__fc_FILE_id),
+                    __fc_stdout->__fc_FILE_data,
+                    (indirect: *(format + (0 ..)));
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file tests/idct/ieee_1180_1990.c, line 195)
+            assigns \result
+              \from (indirect: __fc_stdout->__fc_FILE_id),
+                    __fc_stdout->__fc_FILE_data,
+                    (indirect: *(format + (0 ..)));
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'printf_va_2'
+--------------------------------------------------------------------------------
+
+[  Valid  ] Pre-condition (file tests/idct/ieee_1180_1990.c, line 196)
+            requires valid_read_string(format)
+            by Call Preconditions.
+[ Extern  ] Assigns (file tests/idct/ieee_1180_1990.c, line 196)
+            assigns \result, __fc_stdout->__fc_FILE_data;
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file tests/idct/ieee_1180_1990.c, line 196)
+            assigns __fc_stdout->__fc_FILE_data
+              \from (indirect: __fc_stdout->__fc_FILE_id),
+                    __fc_stdout->__fc_FILE_data,
+                    (indirect: *(format + (0 ..)));
+            Unverifiable but considered Valid.
+[ Extern  ] Froms (file tests/idct/ieee_1180_1990.c, line 196)
+            assigns \result
+              \from (indirect: __fc_stdout->__fc_FILE_id),
+                    __fc_stdout->__fc_FILE_data,
+                    (indirect: *(format + (0 ..)));
+            Unverifiable but considered Valid.
+[  Valid  ] Default behavior
+            default behavior
+            by Frama-C kernel.
+
+--------------------------------------------------------------------------------
+--- Status Report Summary
+--------------------------------------------------------------------------------
+   160 Completely validated
+    16 Locally validated
+   427 Considered valid
+    56 To be validated
+   659 Total
+--------------------------------------------------------------------------------

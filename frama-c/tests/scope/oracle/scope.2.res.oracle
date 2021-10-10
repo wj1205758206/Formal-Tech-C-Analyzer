@@ -1,0 +1,30 @@
+[kernel] Parsing tests/scope/scope.c (with preprocessing)
+[value] Analyzing a complete application starting at loop
+[value] Computing initial state
+[value] Initial state computed
+[value:initial-state] Values of globals at initialization
+  Frama_C_entropy_source ∈ [--..--]
+  S1 ∈ {0}
+  S2 ∈ {0}
+  T[0..99] ∈ {0}
+[value] tests/scope/scope.c:67: entering loop for the first time
+[value:alarm] tests/scope/scope.c:68: Warning: 
+  signed overflow. assert a + 1 ≤ 2147483647;
+[value:alarm] tests/scope/scope.c:69: Warning: 
+  signed overflow. assert b + 1 ≤ 2147483647;
+[value:alarm] tests/scope/scope.c:70: Warning: 
+  signed overflow. assert s + 1 ≤ 2147483647;
+[value:alarm] tests/scope/scope.c:75: Warning: 
+  signed overflow. assert a + 1 ≤ 2147483647;
+[value:alarm] tests/scope/scope.c:76: Warning: 
+  signed overflow. assert b + 1 ≤ 2147483647;
+[value:alarm] tests/scope/scope.c:77: Warning: 
+  signed overflow. assert i + 1 ≤ 2147483647;
+[value] Recording results for loop
+[value] done for function loop
+[value] ====== VALUES COMPUTED ======
+[value:final-states] Values at end of function loop:
+  a ∈ [1..2147483647]
+  b ∈ [1..2147483647]
+  i ∈ [1..2147483647]
+  s ∈ [0..2147483647]

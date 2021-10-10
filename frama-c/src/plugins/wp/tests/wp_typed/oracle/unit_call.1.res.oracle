@@ -1,0 +1,22 @@
+# frama-c -wp -wp-model 'Typed (Ref)' [...]
+[kernel] Parsing tests/wp_typed/unit_call.i (no preprocessing)
+[wp] Running WP plugin...
+[wp] Loading driver 'share/wp.driver'
+[kernel] tests/wp_typed/unit_call.i:7: Warning: 
+  No code nor implicit assigns clause for function f, generating default assigns from the prototype
+[wp] Warning: Missing RTE guards
+------------------------------------------------------------
+  Function job
+------------------------------------------------------------
+
+Goal Assertion (file tests/wp_typed/unit_call.i, line 14):
+Assume {
+  Type: is_sint32(r_1) /\ is_sint32(r).
+  (* Call 'f' *)
+  Have: r < 0.
+  (* Call 'f' *)
+  Have: 0 < r_1.
+}
+Prove: r != r_1.
+
+------------------------------------------------------------

@@ -1,0 +1,53 @@
+# frama-c -wp [...]
+[kernel] Parsing tests/wp/wp_strategy.c (with preprocessing)
+[wp] Running WP plugin...
+[wp] Loading driver 'share/wp.driver'
+[wp] Warning: Missing RTE guards
+------------------------------------------------------------
+  Function default_behaviors with behavior default_for_stmt_54
+------------------------------------------------------------
+
+Goal Assigns 'qed_ok' at block:
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function dpd1 with behavior default_for_stmt_10
+------------------------------------------------------------
+
+Goal Assigns 'qed_ok' at program point (file tests/wp/wp_strategy.c, line 37):
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function dpd2 with behavior default_for_stmt_15
+------------------------------------------------------------
+
+Goal Assigns 'qed_ok' at program point (file tests/wp/wp_strategy.c, line 45):
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function spec_if with behavior default_for_stmt_20
+------------------------------------------------------------
+
+Goal Assigns 'qed_ok' at block:
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function spec_if with behavior default_for_stmt_26
+------------------------------------------------------------
+
+Goal Assigns 'qed_ok' at block:
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function spec_if with behavior default_for_stmt_32
+------------------------------------------------------------
+
+Goal Assigns 'qed_ok' at block:
+Prove: true.
+
+------------------------------------------------------------

@@ -1,0 +1,19 @@
+[kernel] Parsing tests/misc/change_main.i (no preprocessing)
+[value] Analyzing a complete application starting at f
+[value] Computing initial state
+[value] Initial state computed
+[value:initial-state] Values of globals at initialization
+  
+[value] done for function f
+[value] ====== VALUES COMPUTED ======
+[value:final-states] Values at end of function f:
+  
+[value] Analyzing a complete application starting at g
+[value] Computing initial state
+[value] Initial state computed
+[value:initial-state] Values of globals at initialization
+  
+[value] done for function g
+[value] ====== VALUES COMPUTED ======
+[value:final-states] Values at end of function g:
+  

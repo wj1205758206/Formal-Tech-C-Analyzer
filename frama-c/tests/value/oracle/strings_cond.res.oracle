@@ -1,0 +1,46 @@
+[kernel] Parsing tests/value/strings_cond.i (no preprocessing)
+[value] Analyzing a complete application starting at main
+[value] Computing initial state
+[value] Initial state computed
+[value:initial-state] Values of globals at initialization
+  
+[value] computing for function foo <- main.
+  Called from tests/value/strings_cond.i:8.
+[value] tests/value/strings_cond.i:3: 
+  Frama_C_dump_each:
+  # Cvalue domain:
+  s ∈ {{ "Bla" }}
+  ==END OF DUMP==
+[value] tests/value/strings_cond.i:4: entering loop for the first time
+[value] tests/value/strings_cond.i:4: Frama_C_show_each_s: {{ "Bla" }}
+[value] tests/value/strings_cond.i:4: Frama_C_show_each_s: {{ "Bla" + {0; 1} }}
+[value] tests/value/strings_cond.i:4: 
+  Frama_C_show_each_s: {{ "Bla" + {0; 1; 2} }}
+[value] Recording results for foo
+[value] Done for function foo
+[value] Recording results for main
+[value] done for function main
+[value] ====== VALUES COMPUTED ======
+[value:final-states] Values at end of function foo:
+  s ∈ {{ "Bla" + {3} }}
+[value:final-states] Values at end of function main:
+  
+[from] Computing for function foo
+[from] Done for function foo
+[from] Computing for function main
+[from] Done for function main
+[from] ====== DEPENDENCIES COMPUTED ======
+  These dependencies hold at termination for the executions that terminate:
+[from] Function foo:
+  NO EFFECTS
+[from] Function main:
+  NO EFFECTS
+[from] ====== END OF DEPENDENCIES ======
+[inout] Out (internal) for function foo:
+    s
+[inout] Inputs for function foo:
+    "Bla"
+[inout] Out (internal) for function main:
+    \nothing
+[inout] Inputs for function main:
+    "Bla"

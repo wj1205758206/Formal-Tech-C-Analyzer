@@ -1,0 +1,180 @@
+##########################################################################
+#                                                                        #
+#  This file is part of Frama-C.                                         #
+#                                                                        #
+#  Copyright (C) 2007-2018                                               #
+#    CEA (Commissariat à l'énergie atomique et aux énergies              #
+#         alternatives)                                                  #
+#                                                                        #
+#  you can redistribute it and/or modify it under the terms of the GNU   #
+#  Lesser General Public License as published by the Free Software       #
+#  Foundation, version 2.1.                                              #
+#                                                                        #
+#  It is distributed in the hope that it will be useful,                 #
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of        #
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         #
+#  GNU Lesser General Public License for more details.                   #
+#                                                                        #
+#  See the GNU Lesser General Public License version 2.1                 #
+#  for more details (enclosed in the file licenses/LGPLv2.1).            #
+#                                                                        #
+##########################################################################
+
+ptests/ptests_config.ml: Makefile.generating share/Makefile.config
+	$(PRINT_MAKING) $@
+	$(RM) $@
+	$(TOUCH) $@
+	$(CHMOD_RO) $@
+
+tests/ptests_config: Makefile.generating share/Makefile.config
+	$(PRINT_MAKING) $@
+	$(RM) $@
+	$(TOUCH) $@
+	$(ECHO) "DEFAULT_SUITES=$(PLUGIN_TESTS_LIST)" >> $@
+	$(ECHO) "TOPLEVEL_PATH=bin/toplevel.$(OCAMLBEST)$(EXE)" >> $@
+	$(ECHO) "OCAMLRUNPARAM=" >> $@
+	$(ECHO) "FRAMAC_SESSION=." >> $@
+	$(ECHO) "FRAMAC_SHARE=./share" >> $@
+	$(ECHO) "FRAMAC_PLUGIN=./lib/plugins" >> $@
+	$(ECHO) "FRAMAC_PLUGIN_GUI=./lib/plugins/gui" >> $@
+	$(ECHO) "FRAMAC_LIB=./lib/fc" >> $@
+	$(CHMOD_RO) $@
+
+ALL_LIBRARY_NAMES=$(shell ocamlfind query -r -p-format $(LIBRARY_NAMES) $(LIBRARY_NAMES_GUI))
+
+$(CONFIG_FILE): $(CONFIG_FILE).in VERSION share/Makefile.config Makefile.generating configure.in
+	$(SED) \
+	  -e "s|@VERSION@|$(VERSION)|" \
+          -e "s|@CURR_DATE@|$$(LC_ALL=C date)|" \
+	  -e "s|@OCAMLC@|$(OCAMLC)|" \
+          -e "s|@OCAMLOPT@|$(OCAMLOPT)|" \
+	  -e "s|@WARNINGS@|$(WARNINGS)|" \
+          -e "s|@FRAMAC_DATADIR@|$(FRAMAC_DATADIR)|" \
+	  -e "s|@FRAMAC_LIBDIR@|$(FRAMAC_LIBDIR)|" \
+	  -e "s|@FRAMAC_ROOT_SRCDIR@|$(FRAMAC_ROOT_SRCDIR)|" \
+	  -e "s|@FRAMAC_PLUGINDIR@|$(FRAMAC_PLUGINDIR)|" \
+	  -e "s|@FRAMAC_DEFAULT_CPP@|$(FRAMAC_DEFAULT_CPP)|" \
+          -e "s|@FRAMAC_DEFAULT_CPP_ARGS@|$(FRAMAC_DEFAULT_CPP_ARGS)|" \
+	  -e "s|@FRAMAC_GNU_CPP@|$(FRAMAC_GNU_CPP)|" \
+          -e "s|@DEFAULT_CPP_KEEP_COMMENTS@|$(DEFAULT_CPP_KEEP_COMMENTS)|" \
+          -e "s|@DEFAULT_CPP_SUPPORTED_ARCH_OPTS@|$(DEFAULT_CPP_SUPPORTED_ARCH_OPTS)|" \
+          -e "s|@COMPILATION_UNITS@|$(COMPILATION_UNITS)|" \
+          -e "s|@LIBRARY_NAMES@|$(foreach p,$(ALL_LIBRARY_NAMES),\"$p\";)|" \
+	  -e "s|@OPTDOT@|$(OPTDOT)|" \
+          -e "s|@HAS_YOJSON@|$(if $(filter yes,$(HAS_YOJSON)),true,false)|" \
+          -e "s|@EXE@|$(EXE)|" \
+          $< > $@.tmp
+	@touch -r $@.tmp $<
+	$(CP_IF_DIFF) $@.tmp $@
+	$(RM) $@.tmp
+	$(CHMOD_RO) $@
+
+ifeq ("$(LOCAL_MACHDEP)","yes")
+
+MACHDEP_PATH=share
+
+# Create the machine dependency module
+# If the cl command cannot be run then the MSVC part will be identical to GCC
+.PHONY : machdep $(MACHDEP_PATH)/local_machdep.ml
+machdep: $(MACHDEP_PATH)/local_machdep.ml
+bin/machdep.exe: machdep
+
+config.h: 
+	$(PRINT_MAKING) $@
+	$(ECHO) "missing config.h file generated at configure stage using --enable-localmachdep option."
+	exit 1;
+
+$(MACHDEP_PATH)/local_machdep.ml: \
+  $(MACHDEP_PATH)/machdep.c config.h Makefile.generating
+	$(PRINT_MAKING) $@
+	$(RM) $@
+	$(ECHO) "(* This module was generated automatically by code in Makefile and machdep.c *)" >$@
+# Now generate the type definition
+	$(ECHO) "open Cil_types" >> $@
+	if $(CC) -D_GNUCC $< -o bin/machdep.exe ;then \
+	    $(ECHO) "machdep.exe created successfully."; \
+	else \
+	    $(RM) $@; exit 1; \
+	fi
+	$(ECHO) "let gcc = {" >>$@
+	./bin/machdep.exe >>$@
+	$(ECHO) "	 underscore_name = $(UNDERSCORE_NAME) ;" >> $@
+	$(ECHO) "}"          >>$@
+	if cl /D_MSVC $< /Febin/machdep.exe /Fobin/machdep.obj ;then \
+	   $(ECHO) "let hasMSVC = true" >>$@; \
+	else \
+	   $(ECHO) "let hasMSVC = false" >>$@; \
+	fi
+	$(ECHO) "let msvc = {" >>$@
+	./bin/machdep.exe >>$@
+	$(ECHO) "	 underscore_name = true ;" >> $@
+	$(ECHO) "}"          >>$@
+	$(ECHO) \
+	  "let gccHas__builtin_va_list = $(HAVE_BUILTIN_VA_LIST)" >>$@
+	$(ECHO) "let __thread_is_keyword = $(THREAD_IS_KEYWORD)"  >>$@
+	$(ECHO) \
+	  "$@ generated. You may have this file merged into Frama-C by developers."
+	$(CHMOD_RO) $@
+
+endif
+
+# transitioning.ml
+
+GENERATED+= src/libraries/utils/json.ml src/libraries/stdlib/transitioning.ml
+
+src/libraries/stdlib/transitioning.ml: \
+  src/libraries/stdlib/transitioning.ml.in \
+  Makefile.generating share/Makefile.config
+	rm -f $@
+	sed \
+         -e 's/@SPLIT_ON_CHAR@/$(SPLIT_ON_CHAR)/g' \
+         -e 's/@STACK_FOLD@/$(STACK_FOLD)/g' \
+        $< > $@
+	$(CHMOD_RO) $@
+
+##################
+# Frama-C-config #
+##################
+
+src/kernel_internals/runtime/frama_c_config.ml: src/kernel_internals/runtime/config.ml \
+	src/kernel_internals/runtime/frama_c_config.ml.in Makefile.generating
+	$(PRINT_MAKING) $@
+	$(RM) $@
+	$(ECHO) "module Filepath = struct let add_symbolic_dir _ _ = () end" >> $@
+	$(ECHO) "module Config = struct" >> $@
+	$(CAT) src/kernel_internals/runtime/config.ml >> $@
+	$(ECHO) "end" >> $@
+	$(CAT) src/kernel_internals/runtime/frama_c_config.ml.in >> $@
+	$(CHMOD_RO) $@
+
+GENERATED+= src/kernel_internals/runtime/frama_c_config.ml
+
+bin/fc-config$(EXE): src/kernel_internals/runtime/frama_c_config.ml
+ifeq ($(OCAMLBEST),opt)
+	$(OCAMLOPT) str.cmxa $< -o $@
+else
+	$(OCAMLC) str.cma $< -o $@
+endif
+
+# Merlin #
+
+.PHONY:merlin
+.merlin merlin: share/Makefile.config Makefile.generating
+#create Merlin file
+	$(PRINT_MAKING) $@
+	echo "FLG -c $(FLAGS) $(FRAMAC_USER_MERLIN_FLAGS)" > .merlin
+	for PKG in $(LIBRARY_NAMES); do echo PKG $$PKG >> .merlin; done
+	for PKG in $(LIBRARY_NAMES_GUI); do echo PKG $$PKG >> .merlin; done
+	echo "B lib/plugins" >> .merlin
+	echo "B lib/plugins/gui" >> .merlin
+	find src \( -name '.*' -o -name tests -o -name doc -o -name '*.cache' \) -prune \
+	      -o \( -type d -exec printf "B %s\n" {} \; -exec printf "S %s\n" {} \; \) >> .merlin
+
+ifeq ("$(DEVELOPMENT)","yes")
+all:: .merlin
+endif
+
+
+# Local Variables:
+# mode: makefile
+# End:

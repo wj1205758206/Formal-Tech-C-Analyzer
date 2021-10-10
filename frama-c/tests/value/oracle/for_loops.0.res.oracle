@@ -1,0 +1,46 @@
+[kernel] Parsing tests/value/for_loops.c (with preprocessing)
+[value] Analyzing a complete application starting at main
+[value] Computing initial state
+[value] Initial state computed
+[value:initial-state] Values of globals at initialization
+  Frama_C_entropy_source ∈ [--..--]
+  x ∈ {0}
+[value] computing for function Frama_C_interval <- main.
+  Called from tests/value/for_loops.c:24.
+[value] using specification for function Frama_C_interval
+[value] tests/value/for_loops.c:24: 
+  function Frama_C_interval: precondition 'order' got status valid.
+[value] Done for function Frama_C_interval
+[value] tests/value/for_loops.c:27: entering loop for the first time
+[value] tests/value/for_loops.c:29: entering loop for the first time
+[value] tests/value/for_loops.c:30: Frama_C_show_each_F: {0}
+[value] tests/value/for_loops.c:30: Frama_C_show_each_F: {0; 1}
+[value] tests/value/for_loops.c:30: Frama_C_show_each_F: {0; 1; 2}
+[value] tests/value/for_loops.c:30: Frama_C_show_each_F: [0..2147483647]
+[value:alarm] tests/value/for_loops.c:27: Warning: 
+  signed overflow. assert j + 1 ≤ 2147483647;
+[value] Recording results for main
+[value] done for function main
+[value] ====== VALUES COMPUTED ======
+[value:final-states] Values at end of function main:
+  Frama_C_entropy_source ∈ [--..--]
+  j ∈ [1..2147483647]
+  nSelectors ∈ [0..2147483646]
+  w ∈ {0}
+  v ∈ {0}
+[from] Computing for function main
+[from] Computing for function Frama_C_interval <-main
+[from] Done for function Frama_C_interval
+[from] Done for function main
+[from] ====== DEPENDENCIES COMPUTED ======
+  These dependencies hold at termination for the executions that terminate:
+[from] Function Frama_C_interval:
+  Frama_C_entropy_source FROM Frama_C_entropy_source (and SELF)
+  \result FROM Frama_C_entropy_source; min; max
+[from] Function main:
+  Frama_C_entropy_source FROM Frama_C_entropy_source (and SELF)
+[from] ====== END OF DEPENDENCIES ======
+[inout] Out (internal) for function main:
+    Frama_C_entropy_source; j; nSelectors; w; v
+[inout] Inputs for function main:
+    Frama_C_entropy_source

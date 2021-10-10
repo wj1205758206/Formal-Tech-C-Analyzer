@@ -1,0 +1,73 @@
+[kernel] Parsing tests/misc/bts1347.i (no preprocessing)
+[value] Analyzing an incomplete application starting at f
+[value] Computing initial state
+[value] Initial state computed
+[value:initial-state] Values of globals at initialization
+  
+[value:alarm] tests/misc/bts1347.i:5: Warning: 
+  out of bounds read. assert \valid_read(x);
+[value] Recording results for f
+[value] done for function f
+[value] Analyzing an incomplete application starting at g
+[value] Computing initial state
+[value] Initial state computed
+[value:initial-state] Values of globals at initialization
+  
+[value:alarm] tests/misc/bts1347.i:6: Warning: 
+  out of bounds read. assert \valid_read(tmp);
+                      (tmp from x++)
+[value] Recording results for g
+[value] done for function g
+[report] Computing properties status...
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'f'
+--------------------------------------------------------------------------------
+
+[  Dead   ] Assertion 'emitter' (file tests/misc/bts1347.i, line 5)
+            Locally valid, but unreachable.
+            By Value because:
+             - Unreachable return (file tests/misc/bts1347.i, line 5)
+[Unreachable] Unreachable return (file tests/misc/bts1347.i, line 5)
+            by Value.
+
+--------------------------------------------------------------------------------
+--- Properties of Function 'g'
+--------------------------------------------------------------------------------
+
+[    -    ] Assertion 'Value,mem_access' (file tests/misc/bts1347.i, line 6)
+            tried with Value.
+[ Partial ] Assertion 'emitter' (file tests/misc/bts1347.i, line 6)
+            By emitter, with pending:
+             - Assertion 'Value,mem_access' (file tests/misc/bts1347.i, line 6)
+
+--------------------------------------------------------------------------------
+--- Status Report Summary
+--------------------------------------------------------------------------------
+     1 Locally validated
+     1 To be validated
+     1 Dead property
+     1 Unreachable
+     4 Total
+--------------------------------------------------------------------------------
+[value] Analyzing an incomplete application starting at f
+[value] Computing initial state
+[value] Initial state computed
+[value:initial-state] Values of globals at initialization
+  
+[value:alarm] tests/misc/bts1347.i:5: Warning: 
+  out of bounds read. assert \valid_read(x);
+[value] tests/misc/bts1347.i:5: assertion 'emitter' got status valid.
+[value] Recording results for f
+[value] done for function f
+[value] Analyzing an incomplete application starting at g
+[value] Computing initial state
+[value] Initial state computed
+[value:initial-state] Values of globals at initialization
+  
+[value:alarm] tests/misc/bts1347.i:6: Warning: 
+  out of bounds read. assert \valid_read(tmp);
+                      (tmp from x++)
+[value] tests/misc/bts1347.i:6: assertion 'emitter' got status valid.
+[value] Recording results for g
+[value] done for function g

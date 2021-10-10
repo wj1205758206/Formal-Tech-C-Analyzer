@@ -1,0 +1,6 @@
+[kernel] Parsing tests/cil/acsl-comments.i (no preprocessing)
+[kernel:annot-error] tests/cil/acsl-comments.i:1: Warning: 
+  lexical error, unexpected block-comment opening
+[kernel] User Error: warning annot-error treated as fatal error.
+[kernel] User Error: stopping on file "tests/cil/acsl-comments.i" that has errors.
+[kernel] Frama-C aborted: invalid user input.

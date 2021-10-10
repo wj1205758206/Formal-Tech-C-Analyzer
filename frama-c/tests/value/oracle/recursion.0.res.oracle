@@ -1,0 +1,19 @@
+[kernel] Parsing tests/value/recursion.i (no preprocessing)
+[value] Analyzing an incomplete application starting at main
+[value] Computing initial state
+[value] Initial state computed
+[value:initial-state] Values of globals at initialization
+  G ∈ [--..--]
+  x ∈ [--..--]
+  c ∈ [--..--]
+  s ∈ [--..--]
+  pg ∈ {{ NULL ; &S_pg[0] }}
+  S_pg[0..1] ∈ [--..--]
+[value] computing for function ff <- main.
+  Called from tests/value/recursion.i:67.
+[value] tests/value/recursion.i:8: Warning: 
+  detected recursive call (ff <- ff :: tests/value/recursion.i:67 <- main)
+  Use -val-ignore-recursive-calls to ignore (beware this will make the analysis
+  unsound)
+[value] User Error: Degeneration occurred:
+  results are not correct for lines of code that can be reached from the degeneration point.

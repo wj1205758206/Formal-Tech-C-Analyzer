@@ -1,0 +1,349 @@
+# frama-c -wp -wp-model 'Typed (Ref)' [...]
+[kernel] Parsing tests/wp_typed/user_collect.i (no preprocessing)
+[wp] Running WP plugin...
+[wp] Loading driver 'share/wp.driver'
+[wp] Warning: Missing RTE guards
+------------------------------------------------------------
+  Function caller
+------------------------------------------------------------
+
+Goal Post-condition 'K' in 'caller':
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Post-condition 'P1' in 'caller':
+Let x = k - 1.
+Let m = p[x <- v].
+Let m_1 = m[k <- v_1].
+Assume {
+  Type: IsArray1_sint32(p) /\ is_sint32(k) /\ is_sint32(v_1) /\
+      is_sint32(v) /\ is_sint32(x1_0) /\ is_sint32(x2_0) /\ is_sint32(x) /\
+      is_sint32(1 + k) /\ IsArray1_sint32(m) /\ IsArray1_sint32(m_1).
+  (* Pre-condition *)
+  Have: (0 < k) /\ (k <= 9).
+  (* Call 'job' *)
+  Have: (k <= 10) /\ EqArray1_int(10, m, p[x <- x1_0]).
+  (* Call 'job' *)
+  Have: EqArray1_int(10, m_1, m[k <- x2_0]).
+}
+Prove: x1_0 = v.
+
+------------------------------------------------------------
+
+Goal Post-condition 'P2' in 'caller':
+Let x = k - 1.
+Let m = p[x <- v_1].
+Let m_1 = m[k <- v].
+Assume {
+  Type: IsArray1_sint32(p) /\ is_sint32(k) /\ is_sint32(v) /\
+      is_sint32(v_1) /\ is_sint32(x1_0) /\ is_sint32(x2_0) /\ is_sint32(x) /\
+      is_sint32(1 + k) /\ IsArray1_sint32(m) /\ IsArray1_sint32(m_1).
+  (* Pre-condition *)
+  Have: (0 < k) /\ (k <= 9).
+  (* Call 'job' *)
+  Have: (k <= 10) /\ EqArray1_int(10, m, p[x <- x1_0]).
+  (* Call 'job' *)
+  Have: EqArray1_int(10, m_1, m[k <- x2_0]).
+}
+Prove: x2_0 = v.
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file tests/wp_typed/user_collect.i, line 10) in 'job'' in 'caller' at call 'job' (file tests/wp_typed/user_collect.i, line 52)
+:
+Assume { Type: is_sint32(k). (* Pre-condition *) Have: (0 <= k) /\ (k <= 8).
+}
+Prove: k <= 9.
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file tests/wp_typed/user_collect.i, line 10) in 'job'' in 'caller' at call 'job' (file tests/wp_typed/user_collect.i, line 53)
+:
+Let m = p[k <- v].
+Assume {
+  Type: IsArray1_sint32(p) /\ is_sint32(k) /\ is_sint32(x1_0) /\
+      IsArray1_sint32(m) /\ is_sint32(1 + k).
+  (* Pre-condition *)
+  Have: (0 <= k) /\ (k <= 8).
+  (* Call 'job' *)
+  Have: (k <= 9) /\ EqArray1_int(10, m, p[k <- x1_0]).
+}
+Prove: (-1) <= k.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function caller2
+------------------------------------------------------------
+
+Goal Post-condition 'K' in 'caller2':
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Post-condition 'Q1' in 'caller2':
+Let x = k - 1.
+Let m = q[x <- v].
+Let m_1 = m[k <- v_1].
+Assume {
+  Type: IsArray1S1_S(q) /\ IsS1_S(s1_0) /\ IsS1_S(s2_0) /\ IsS1_S(v_1) /\
+      IsS1_S(v) /\ is_sint32(k) /\ is_sint32(x) /\ is_sint32(1 + k) /\
+      IsArray1S1_S(m) /\ IsArray1S1_S(m_1).
+  (* Pre-condition *)
+  Have: (0 < k) /\ (k <= 9).
+  (* Call 'job2' *)
+  Have: (k <= 10) /\ EqArray1_S1_S(10, m, q[x <- s1_0]).
+  (* Call 'job2' *)
+  Have: EqArray1_S1_S(10, m_1, m[k <- s2_0]).
+}
+Prove: EqS1_S(v, s1_0).
+
+------------------------------------------------------------
+
+Goal Post-condition 'Q2' in 'caller2':
+Let x = k - 1.
+Let m = q[x <- v_1].
+Let m_1 = m[k <- v].
+Assume {
+  Type: IsArray1S1_S(q) /\ IsS1_S(s1_0) /\ IsS1_S(s2_0) /\ IsS1_S(v) /\
+      IsS1_S(v_1) /\ is_sint32(k) /\ is_sint32(x) /\ is_sint32(1 + k) /\
+      IsArray1S1_S(m) /\ IsArray1S1_S(m_1).
+  (* Pre-condition *)
+  Have: (0 < k) /\ (k <= 9).
+  (* Call 'job2' *)
+  Have: (k <= 10) /\ EqArray1_S1_S(10, m, q[x <- s1_0]).
+  (* Call 'job2' *)
+  Have: EqArray1_S1_S(10, m_1, m[k <- s2_0]).
+}
+Prove: EqS1_S(v, s2_0).
+
+------------------------------------------------------------
+
+Goal Post-condition 'R' in 'caller2':
+Let x = k - 1.
+Let m = q[x <- v].
+Let m_1 = m[k <- v_1].
+Let m_2 = q[x <- s1_0].
+Assume {
+  Type: IsArray1S1_S(q) /\ IsS1_S(s1_0) /\ IsS1_S(s2_0) /\ IsS1_S(v_1) /\
+      IsS1_S(v) /\ is_sint32(k) /\ is_sint32(x) /\ is_sint32(1 + k) /\
+      IsArray1S1_S(m) /\ IsArray1S1_S(m_1).
+  (* Pre-condition *)
+  Have: (0 < k) /\ (k <= 9).
+  (* Call 'job2' *)
+  Have: (k <= 10) /\ EqArray1_S1_S(10, m, m_2).
+  (* Call 'job2' *)
+  Have: EqArray1_S1_S(10, m_1, m[k <- s2_0]).
+}
+Prove: EqArray1_S1_S(10, m_1, m_2[k <- s2_0]).
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file tests/wp_typed/user_collect.i, line 21) in 'job2'' in 'caller2' at call 'job2' (file tests/wp_typed/user_collect.i, line 65)
+:
+Assume { Type: is_sint32(k). (* Pre-condition *) Have: (0 <= k) /\ (k <= 8).
+}
+Prove: k <= 9.
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file tests/wp_typed/user_collect.i, line 21) in 'job2'' in 'caller2' at call 'job2' (file tests/wp_typed/user_collect.i, line 66)
+:
+Let m = q[k <- v].
+Assume {
+  Type: IsArray1S1_S(q) /\ IsS1_S(s1_0) /\ is_sint32(k) /\ IsArray1S1_S(m) /\
+      is_sint32(1 + k).
+  (* Pre-condition *)
+  Have: (0 <= k) /\ (k <= 8).
+  (* Call 'job2' *)
+  Have: (k <= 9) /\ EqArray1_S1_S(10, m, q[k <- s1_0]).
+}
+Prove: (-1) <= k.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function caller3
+------------------------------------------------------------
+
+Goal Post-condition 'K' in 'caller3':
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Post-condition 'Q1' in 'caller3':
+Let x = k - 1.
+Let m = q[x <- v].
+Let m_1 = m[k <- v_1].
+Assume {
+  Type: IsArray1S1_S(q) /\ IsS1_S(s1_0) /\ IsS1_S(s2_0) /\ IsS1_S(v_1) /\
+      IsS1_S(v) /\ is_sint32(k) /\ is_sint32(x) /\ is_sint32(1 + k) /\
+      IsArray1S1_S(m) /\ IsArray1S1_S(m_1).
+  (* Pre-condition *)
+  Have: (0 < k) /\ (k <= 9).
+  (* Call 'job3' *)
+  Have: (k <= 10) /\ EqArray1_S1_S(10, m, q[x <- s1_0]).
+  (* Call 'job3' *)
+  Have: EqArray1_S1_S(10, m_1, m[k <- s2_0]).
+}
+Prove: EqS1_S(v, s1_0).
+
+------------------------------------------------------------
+
+Goal Post-condition 'Q2' in 'caller3':
+Let x = k - 1.
+Let m = q[x <- v_1].
+Let m_1 = m[k <- v].
+Assume {
+  Type: IsArray1S1_S(q) /\ IsS1_S(s1_0) /\ IsS1_S(s2_0) /\ IsS1_S(v) /\
+      IsS1_S(v_1) /\ is_sint32(k) /\ is_sint32(x) /\ is_sint32(1 + k) /\
+      IsArray1S1_S(m) /\ IsArray1S1_S(m_1).
+  (* Pre-condition *)
+  Have: (0 < k) /\ (k <= 9).
+  (* Call 'job3' *)
+  Have: (k <= 10) /\ EqArray1_S1_S(10, m, q[x <- s1_0]).
+  (* Call 'job3' *)
+  Have: EqArray1_S1_S(10, m_1, m[k <- s2_0]).
+}
+Prove: EqS1_S(v, s2_0).
+
+------------------------------------------------------------
+
+Goal Post-condition 'R' in 'caller3':
+Let x = k - 1.
+Let m = q[x <- v].
+Let m_1 = m[k <- v_1].
+Let m_2 = q[x <- s1_0].
+Assume {
+  Type: IsArray1S1_S(q) /\ IsS1_S(s1_0) /\ IsS1_S(s2_0) /\ IsS1_S(v_1) /\
+      IsS1_S(v) /\ is_sint32(k) /\ is_sint32(x) /\ is_sint32(1 + k) /\
+      IsArray1S1_S(m) /\ IsArray1S1_S(m_1).
+  (* Pre-condition *)
+  Have: (0 < k) /\ (k <= 9).
+  (* Call 'job3' *)
+  Have: (k <= 10) /\ EqArray1_S1_S(10, m, m_2).
+  (* Call 'job3' *)
+  Have: EqArray1_S1_S(10, m_1, m[k <- s2_0]).
+}
+Prove: EqArray1_S1_S(10, m_1, m_2[k <- s2_0]).
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file tests/wp_typed/user_collect.i, line 32) in 'job3'' in 'caller3' at call 'job3' (file tests/wp_typed/user_collect.i, line 78)
+:
+Assume { Type: is_sint32(k). (* Pre-condition *) Have: (0 <= k) /\ (k <= 8).
+}
+Prove: k <= 9.
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file tests/wp_typed/user_collect.i, line 32) in 'job3'' in 'caller3' at call 'job3' (file tests/wp_typed/user_collect.i, line 79)
+:
+Let m = q[k <- v].
+Assume {
+  Type: IsArray1S1_S(q) /\ IsS1_S(s1_0) /\ is_sint32(k) /\ IsArray1S1_S(m) /\
+      is_sint32(1 + k).
+  (* Pre-condition *)
+  Have: (0 <= k) /\ (k <= 8).
+  (* Call 'job3' *)
+  Have: (k <= 9) /\ EqArray1_S1_S(10, m, q[k <- s1_0]).
+}
+Prove: (-1) <= k.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function job
+------------------------------------------------------------
+
+Goal Post-condition 'K' in 'job':
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Post-condition 'P' in 'job':
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Assigns (file tests/wp_typed/user_collect.i, line 13) in 'job' (1/3):
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Assigns (file tests/wp_typed/user_collect.i, line 13) in 'job' (2/3):
+Effect at line 17
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Assigns (file tests/wp_typed/user_collect.i, line 13) in 'job' (3/3):
+Effect at line 17
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function job2
+------------------------------------------------------------
+
+Goal Post-condition 'K' in 'job2':
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Post-condition 'Q' in 'job2':
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Assigns (file tests/wp_typed/user_collect.i, line 24) in 'job2' (1/3):
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Assigns (file tests/wp_typed/user_collect.i, line 24) in 'job2' (2/3):
+Effect at line 28
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Assigns (file tests/wp_typed/user_collect.i, line 24) in 'job2' (3/3):
+Effect at line 28
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function job3
+------------------------------------------------------------
+
+Goal Post-condition 'K' in 'job3':
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Post-condition 'Q' in 'job3':
+Let a = s.F1_S_f.
+Let m = q[k <- { F1_S_f = (q[k].F1_S_f)[0 <- a[0]][1 <- a[1]] }].
+Assume {
+  Type: IsArray1S1_S(q) /\ IsS1_S(s) /\ is_sint32(k) /\ IsArray1S1_S(m).
+  (* Pre-condition *)
+  Have: (0 <= k) /\ (k <= 9).
+}
+Prove: EqArray1_S1_S(10, m, q[k <- s]).
+
+------------------------------------------------------------
+
+Goal Assigns (file tests/wp_typed/user_collect.i, line 35) in 'job3' (1/3):
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Assigns (file tests/wp_typed/user_collect.i, line 35) in 'job3' (2/3):
+Effect at line 39
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Assigns (file tests/wp_typed/user_collect.i, line 35) in 'job3' (3/3):
+Effect at line 40
+Prove: true.
+
+------------------------------------------------------------

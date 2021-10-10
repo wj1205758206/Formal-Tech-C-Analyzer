@@ -1,0 +1,39 @@
+# frama-c -wp [...]
+[kernel] Parsing tests/wp_bts/bts_1586.i (no preprocessing)
+[wp] Running WP plugin...
+[wp] Loading driver 'share/wp.driver'
+[wp] Warning: Missing RTE guards
+------------------------------------------------------------
+  Function compute_bizarre with behavior Bizarre
+------------------------------------------------------------
+
+Goal Post-condition for 'Bizarre' 'TRANS' in 'compute_bizarre':
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function compute_normal with behavior Normal
+------------------------------------------------------------
+
+Goal Post-condition for 'Normal' 'TRANS' in 'compute_normal':
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main_bizarre_KO
+------------------------------------------------------------
+
+Goal Assertion 'FALSE' (file tests/wp_bts/bts_1586.i, line 32):
+Tags: Case 0.
+Prove: false.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function main_normal_KO
+------------------------------------------------------------
+
+Goal Assertion 'FALSE' (file tests/wp_bts/bts_1586.i, line 47):
+Tags: Case 0.
+Prove: false.
+
+------------------------------------------------------------

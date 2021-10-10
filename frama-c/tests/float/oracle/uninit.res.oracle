@@ -1,0 +1,27 @@
+[kernel] Parsing tests/float/uninit.i (no preprocessing)
+[value] Analyzing a complete application starting at main
+[value] Computing initial state
+[value] Initial state computed
+[value:initial-state] Values of globals at initialization
+  
+[value:alarm] tests/float/uninit.i:5: Warning: 
+  accessing uninitialized left-value. assert \initialized(&f);
+[value] Recording results for main
+[value] done for function main
+[value] tests/float/uninit.i:5: 
+  assertion 'Value,initialization' got final status invalid.
+[value] ====== VALUES COMPUTED ======
+[value:final-states] Values at end of function main:
+  f ∈ UNINITIALIZED
+  __retres ∈ {0}
+[from] Computing for function main
+[from] Done for function main
+[from] ====== DEPENDENCIES COMPUTED ======
+  These dependencies hold at termination for the executions that terminate:
+[from] Function main:
+  \result FROM \nothing
+[from] ====== END OF DEPENDENCIES ======
+[inout] Out (internal) for function main:
+    f; __retres
+[inout] Inputs for function main:
+    \nothing

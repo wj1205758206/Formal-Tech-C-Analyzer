@@ -1,0 +1,9 @@
+[kernel] normalize(/): /
+[kernel] normalize(/..): /
+[kernel] normalize(/../../.): /
+[kernel] normalize(///): //
+[kernel] normalize(//tmp//): //tmp/
+[kernel] normalize(/../tmp/../..): /
+[kernel] normalize(/tmp/inexistent_directory/..): /tmp
+[kernel] caught the expected exception
+[kernel] Parsing tests/misc/filepath.i (no preprocessing)

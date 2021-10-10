@@ -1,0 +1,43 @@
+[kernel] Parsing tests/value/overflow_cast_float_int.i (no preprocessing)
+[value] Analyzing a complete application starting at main
+[value] Computing initial state
+[value] Initial state computed
+[value:initial-state] Values of globals at initialization
+  v ∈ [--..--]
+[value:alarm] tests/value/overflow_cast_float_int.i:16: Warning: 
+  overflow in conversion from floating-point to integer.
+  assert vf1 < 2147483648;
+[value:alarm] tests/value/overflow_cast_float_int.i:20: Warning: 
+  overflow in conversion from floating-point to integer.
+  assert -2147483649 < -2147483649.5;
+[value:alarm] tests/value/overflow_cast_float_int.i:24: Warning: 
+  overflow in conversion from floating-point to integer.
+  assert -2147483649 < dd;
+[value] Recording results for main
+[value] done for function main
+[value] tests/value/overflow_cast_float_int.i:16: 
+  assertion 'Value,float_to_int' got final status invalid.
+[value] tests/value/overflow_cast_float_int.i:20: 
+  assertion 'Value,float_to_int' got final status invalid.
+[value] tests/value/overflow_cast_float_int.i:24: 
+  assertion 'Value,float_to_int' got final status invalid.
+[value] ====== VALUES COMPUTED ======
+[value:final-states] Values at end of function main:
+  vf1 ∈ UNINITIALIZED
+  e ∈ UNINITIALIZED
+  d ∈ {2147483647}
+  c1 ∈ {2147483647}
+  c2 ∈ UNINITIALIZED
+  dd ∈ [-1.17159917953e+20 .. -30459646388.]
+  __retres ∈ {0}
+[from] Computing for function main
+[from] Done for function main
+[from] ====== DEPENDENCIES COMPUTED ======
+  These dependencies hold at termination for the executions that terminate:
+[from] Function main:
+  \result FROM \nothing
+[from] ====== END OF DEPENDENCIES ======
+[inout] Out (internal) for function main:
+    vf1; e; d; c1; c2; dd; tmp; k; __retres
+[inout] Inputs for function main:
+    v

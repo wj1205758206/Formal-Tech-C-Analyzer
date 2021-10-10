@@ -1,0 +1,83 @@
+(**************************************************************************)
+(*                                                                        *)
+(*  This file is part of Frama-C.                                         *)
+(*                                                                        *)
+(*  Copyright (C) 2007-2018                                               *)
+(*    CEA (Commissariat à l'énergie atomique et aux énergies              *)
+(*         alternatives)                                                  *)
+(*                                                                        *)
+(*  you can redistribute it and/or modify it under the terms of the GNU   *)
+(*  Lesser General Public License as published by the Free Software       *)
+(*  Foundation, version 2.1.                                              *)
+(*                                                                        *)
+(*  It is distributed in the hope that it will be useful,                 *)
+(*  but WITHOUT ANY WARRANTY; without even the implied warranty of        *)
+(*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *)
+(*  GNU Lesser General Public License for more details.                   *)
+(*                                                                        *)
+(*  See the GNU Lesser General Public License version 2.1                 *)
+(*  for more details (enclosed in the file licenses/LGPLv2.1).            *)
+(*                                                                        *)
+(**************************************************************************)
+
+# 24 "src/kernel_internals/runtime/config.ml.in"
+
+let version = "@VERSION@"
+
+let is_gui = ref false
+
+let ocamlc = "@OCAMLC@"
+let ocamlopt = "@OCAMLOPT@"
+let ocaml_wflags = "@WARNINGS@"
+
+let datadir = try Sys.getenv "FRAMAC_SHARE" with Not_found -> "@FRAMAC_DATADIR@"
+let () = Filepath.add_symbolic_dir "FRAMAC_SHARE" datadir
+let libdir = try Sys.getenv "FRAMAC_LIB" with Not_found -> "@FRAMAC_LIBDIR@"
+let () = Filepath.add_symbolic_dir "FRAMAC_LIB" libdir
+let plugin_dir =
+  try
+    let path = Sys.getenv "FRAMAC_PLUGIN" in
+    Str.split (Str.regexp ":") path
+  with Not_found ->
+    try [ Sys.getenv "FRAMAC_LIB" ^ "/plugins" ]
+    with Not_found -> [ "@FRAMAC_PLUGINDIR@" ]
+
+let plugin_path = String.concat ":" plugin_dir
+
+let () = match plugin_dir with
+  | [d] -> Filepath.add_symbolic_dir "FRAMAC_PLUGIN" d
+  | ds ->
+      Array.iteri
+        (fun i d ->
+           let path = Printf.sprintf "FRAMAC_PLUGIN#%d" (succ i) in
+           Filepath.add_symbolic_dir path d)
+        (Array.of_list ds)
+
+let default_cpp = "@FRAMAC_DEFAULT_CPP@"
+
+let default_cpp_args = " @FRAMAC_DEFAULT_CPP_ARGS@"
+
+let env_or_default f vdefault =
+  try
+    let env = Sys.getenv "CPP" ^ default_cpp_args in
+    if env=default_cpp then vdefault else f env
+  with Not_found -> vdefault
+
+let preprocessor = env_or_default (fun x -> x) default_cpp
+
+let using_default_cpp = env_or_default (fun _ -> false) true
+
+let preprocessor_is_gnu_like =
+  env_or_default (fun _ -> false) @FRAMAC_GNU_CPP@
+
+let preprocessor_supported_arch_options = [@DEFAULT_CPP_SUPPORTED_ARCH_OPTS@]
+
+let preprocessor_keep_comments =
+  env_or_default (fun _ -> true) @DEFAULT_CPP_KEEP_COMMENTS@
+
+let compilation_unit_names = [@COMPILATION_UNITS@]
+let library_names = [@LIBRARY_NAMES@]
+
+let has_yojson = @HAS_YOJSON@
+
+let dot = @OPTDOT@

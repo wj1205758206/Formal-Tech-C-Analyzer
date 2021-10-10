@@ -1,0 +1,30 @@
+[kernel] Parsing tests/value/user_assertion_uninit_var.i (no preprocessing)
+[value] Analyzing a complete application starting at main
+[value] Computing initial state
+[value] Initial state computed
+[value:initial-state] Values of globals at initialization
+  
+[value] tests/value/user_assertion_uninit_var.i:3: 
+  entering loop for the first time
+[value:alarm] tests/value/user_assertion_uninit_var.i:4: Warning: 
+  assertion got status unknown.
+[value:alarm] tests/value/user_assertion_uninit_var.i:6: Warning: 
+  accessing uninitialized left-value. assert \initialized(&n);
+[value] Recording results for main
+[value] done for function main
+[value] ====== VALUES COMPUTED ======
+[value:final-states] Values at end of function main:
+  i ∈ {10}
+  n ∈ [0..9]
+  x ∈ {0; 1}
+[from] Computing for function main
+[from] Done for function main
+[from] ====== DEPENDENCIES COMPUTED ======
+  These dependencies hold at termination for the executions that terminate:
+[from] Function main:
+  NO EFFECTS
+[from] ====== END OF DEPENDENCIES ======
+[inout] Out (internal) for function main:
+    i; n; x
+[inout] Inputs for function main:
+    \nothing

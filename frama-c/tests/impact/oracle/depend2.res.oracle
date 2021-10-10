@@ -1,0 +1,37 @@
+[kernel] Parsing tests/impact/depend2.i (no preprocessing)
+[impact] beginning analysis
+[value] Analyzing a complete application starting at main
+[value] Computing initial state
+[value] Initial state computed
+[value:initial-state] Values of globals at initialization
+  
+[value] computing for function apply <- main.
+  Called from tests/impact/depend2.i:11.
+[value] computing for function find <- apply <- main.
+  Called from tests/impact/depend2.i:7.
+[value] Recording results for find
+[value] Done for function find
+[value] Recording results for apply
+[value] Done for function apply
+[value] computing for function apply <- main.
+  Called from tests/impact/depend2.i:13.
+[value] computing for function find <- apply <- main.
+  Called from tests/impact/depend2.i:7.
+[value] Recording results for find
+[value] Done for function find
+[value] Recording results for apply
+[value] Done for function apply
+[value] Recording results for main
+[value] done for function main
+[pdg] computing for function main
+[from] Computing for function apply
+[from] Computing for function find <-apply
+[from] Done for function find
+[from] Done for function apply
+[pdg] done for function main
+[pdg] computing for function apply
+[pdg] done for function apply
+[impact] impacted statements of stmt(s) 11 are:
+    tests/impact/depend2.i:14 (sid 13): __retres = a + b;
+    tests/impact/depend2.i:14 (sid 18): return __retres;
+[impact] analysis done

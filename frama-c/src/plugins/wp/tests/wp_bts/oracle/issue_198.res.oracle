@@ -1,0 +1,12 @@
+# frama-c -wp [...]
+[kernel] Parsing tests/wp_bts/issue_198.i (no preprocessing)
+[wp] Running WP plugin...
+[wp] Loading driver 'share/wp.driver'
+------------------------------------------------------------
+  Global
+------------------------------------------------------------
+
+Lemma broken:
+Prove: (0<b_0) -> (is_sint32 b_0) -> ((b_0 div b_0)=1)
+
+------------------------------------------------------------

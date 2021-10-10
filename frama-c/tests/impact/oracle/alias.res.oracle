@@ -1,0 +1,34 @@
+[kernel] Parsing tests/impact/alias.i (no preprocessing)
+[impact] beginning analysis
+[value] Analyzing an incomplete application starting at f
+[value] Computing initial state
+[value] Initial state computed
+[value:initial-state] Values of globals at initialization
+  P ∈ [--..--]
+  c ∈ [--..--]
+[value:alarm] tests/impact/alias.i:7: Warning: 
+  function f: precondition got status unknown.
+[value:alarm] tests/impact/alias.i:11: Warning: 
+  out of bounds write. assert \valid(y);
+[value:alarm] tests/impact/alias.i:12: Warning: 
+  out of bounds read. assert \valid_read(x + 1);
+[value:alarm] tests/impact/alias.i:13: Warning: 
+  out of bounds write. assert \valid(y);
+[value:alarm] tests/impact/alias.i:15: Warning: 
+  out of bounds read. assert \valid_read(x + 1);
+[value:alarm] tests/impact/alias.i:18: Warning: 
+  out of bounds read. assert \valid_read(y);
+[value] Recording results for f
+[value] done for function f
+[value] tests/impact/alias.i:18: 
+  assertion 'Value,mem_access' got final status invalid.
+[scope:rm_asserts] removing 2 assertion(s)
+[pdg] computing for function f
+[pdg] done for function f
+[impact] impacted statements of stmt(s) 2 are:
+    tests/impact/alias.i:11 (sid 3): *y = 4;
+    tests/impact/alias.i:12 (sid 4): int a = *(x + 1) + 2;
+    tests/impact/alias.i:13 (sid 5): *y = 2;
+    tests/impact/alias.i:15 (sid 9): __retres = *(x + 1);
+    tests/impact/alias.i:14 (sid 18): return_label: return __retres;
+[impact] analysis done

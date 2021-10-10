@@ -1,0 +1,37 @@
+[kernel] Parsing tests/spec/shifts.c (with preprocessing)
+[value] Analyzing a complete application starting at main
+[value] Computing initial state
+[value] Initial state computed
+[value:initial-state] Values of globals at initialization
+  e ∈ {0}
+[value] computing for function f <- main.
+  Called from tests/spec/shifts.c:19.
+[value] tests/spec/shifts.c:13: assertion got status valid.
+[value] tests/spec/shifts.c:8: 
+  function f, behavior a: postcondition got status valid.
+[value] tests/spec/shifts.c:9: 
+  function f, behavior b: postcondition got status valid.
+[value] Recording results for f
+[value] Done for function f
+[value] Recording results for main
+[value] done for function main
+[value] ====== VALUES COMPUTED ======
+[value:final-states] Values at end of function f:
+  e ∈ {168}
+  y ∈ {168}
+[value:final-states] Values at end of function main:
+  e ∈ {168}
+  __retres ∈ {0}
+[from] Computing for function f
+[from] Done for function f
+[from] Computing for function main
+[from] Done for function main
+[from] ====== DEPENDENCIES COMPUTED ======
+  These dependencies hold at termination for the executions that terminate:
+[from] Function f:
+  e FROM x
+  \result FROM x
+[from] Function main:
+  e FROM \nothing
+  \result FROM \nothing
+[from] ====== END OF DEPENDENCIES ======

@@ -1,0 +1,15 @@
+# frama-c -wp [...]
+[kernel] Parsing tests/wp_bts/bts779.i (no preprocessing)
+[wp] Running WP plugin...
+[wp] Loading driver 'share/wp.driver'
+[wp] Warning: Missing RTE guards
+------------------------------------------------------------
+  Function f
+------------------------------------------------------------
+
+Goal Assertion (file tests/wp_bts/bts779.i, line 6):
+Let x = Mint_0[shift_uint8(t, 0)].
+Assume { Type: is_uint8(x). (* Heap *) Have: region(t.base) <= 0. }
+Prove: x <= 255.
+
+------------------------------------------------------------

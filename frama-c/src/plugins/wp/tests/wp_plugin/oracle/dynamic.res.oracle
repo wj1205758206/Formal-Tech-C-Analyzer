@@ -1,0 +1,55 @@
+# frama-c -wp [...]
+[kernel] Parsing tests/wp_plugin/dynamic.i (no preprocessing)
+[wp] Running WP plugin...
+[wp] Computing dynamic calls.
+[wp] Dynamic call(s): 1.
+[wp] Loading driver 'share/wp.driver'
+[wp] Warning: Missing RTE guards
+------------------------------------------------------------
+  Function call
+------------------------------------------------------------
+
+Goal calls f1 f2 in 'call' at instruction (file tests/wp_plugin/dynamic.i, line 30):
+Let a = Mptr_0[shiftfield_F1_S_f(closure_0)].
+Let a_1 = global(G_f2_26).
+Let a_2 = global(G_f1_20).
+Let x = Mint_0[shiftfield_F1_S_param(closure_0)].
+Assume {
+  Type: is_sint32(x).
+  (* Heap *)
+  Have: (region(closure_0.base) <= 0) /\ framed(Mptr_0).
+  (* Pre-condition *)
+  Have: (a = a_1) \/ ((a = a_2) /\ (abs_int(x) <= 5)).
+}
+Prove: (a = a_2) \/ (a = a_1).
+
+------------------------------------------------------------
+
+Goal Post-condition (file tests/wp_plugin/dynamic.i, line 26) in 'call' (1/2):
+Tags: Call f1.
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Post-condition (file tests/wp_plugin/dynamic.i, line 26) in 'call' (2/2):
+Tags: Call f2.
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Instance of 'Pre-condition (file tests/wp_plugin/dynamic.i, line 10) in 'f1'' in 'call' at instruction (file tests/wp_plugin/dynamic.i, line 30)
+:
+Tags: Call f1.
+Let x = Mint_0[shiftfield_F1_S_param(closure_0)].
+Assume {
+  Type: is_sint32(x).
+  (* Heap *)
+  Have: (region(closure_0.base) <= 0) /\ framed(Mptr_0).
+  (* Pre-condition *)
+  Have: abs_int(x) <= 5.
+  (* Instance of 'f1' *)
+  Have: Mptr_0[shiftfield_F1_S_f(closure_0)] = global(G_f1_20).
+}
+Prove: ((-10) <= x) /\ (x <= 10).
+
+------------------------------------------------------------

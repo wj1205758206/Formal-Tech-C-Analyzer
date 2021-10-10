@@ -1,0 +1,75 @@
+# frama-c -wp -wp-no-volatile [...]
+[kernel] Parsing tests/wp_plugin/volatile.i (no preprocessing)
+[wp] Running WP plugin...
+[wp] Loading driver 'share/wp.driver'
+[wp] Warning: Missing RTE guards
+[wp] tests/wp_plugin/volatile.i:15: Warning: 
+  unsafe volatile access to (term) l-value
+[wp] tests/wp_plugin/volatile.i:14: Warning: 
+  unsafe write-access to volatile l-value
+[wp] tests/wp_plugin/volatile.i:21: Warning: 
+  unsafe volatile access to (term) l-value
+[wp] tests/wp_plugin/volatile.i:20: Warning: 
+  unsafe read-access to volatile l-value
+[wp] tests/wp_plugin/volatile.i:35: Warning: 
+  unsafe volatile access to (term) l-value
+[wp] tests/wp_plugin/volatile.i:35: Warning: 
+  unsafe volatile access to (term) l-value
+[wp] tests/wp_plugin/volatile.i:34: Warning: 
+  unsafe write-access to volatile l-value
+------------------------------------------------------------
+  Function job_assigns
+------------------------------------------------------------
+
+Goal Assertion 'KO_WHEN_VOLATILE' (file tests/wp_plugin/volatile.i, line 15):
+tests/wp_plugin/volatile.i:14: warning from wp:
+ - Warning: ignore volatile attribute
+   Reason: unsafe write-access to volatile l-value
+tests/wp_plugin/volatile.i:15: warning from wp:
+ - Warning: ignore volatile attribute
+   Reason: unsafe volatile access to (term) l-value
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function job_read
+------------------------------------------------------------
+
+Goal Assertion 'KO_WHEN_VOLATILE' (file tests/wp_plugin/volatile.i, line 21):
+tests/wp_plugin/volatile.i:20: warning from wp:
+ - Warning: ignore volatile attribute
+   Reason: unsafe read-access to volatile l-value
+tests/wp_plugin/volatile.i:21: warning from wp:
+ - Warning: ignore volatile attribute
+   Reason: unsafe volatile access to (term) l-value
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function job_struct
+------------------------------------------------------------
+
+Goal Assertion 'ok,dead_code' (file tests/wp_plugin/volatile.i, line 29):
+Prove: true.
+
+------------------------------------------------------------
+------------------------------------------------------------
+  Function job_struct_assigns
+------------------------------------------------------------
+
+Goal Assertion 'KO_WHEN_VOLATILE' (file tests/wp_plugin/volatile.i, line 35):
+tests/wp_plugin/volatile.i:34: warning from wp:
+ - Warning: ignore volatile attribute
+   Reason: unsafe write-access to volatile l-value
+tests/wp_plugin/volatile.i:35: warning from wp:
+ - Warning: ignore volatile attribute
+   Reason: unsafe volatile access to (term) l-value
+tests/wp_plugin/volatile.i:35: warning from wp:
+ - Warning: ignore volatile attribute
+   Reason: unsafe volatile access to (term) l-value
+Prove: true.
+
+------------------------------------------------------------
+[wp] Warning: Separation hypotheses for function 'job_struct_assigns':
+  /*@ behavior typed: requires \separated(&sv,p); */
+  void job_struct_assigns(struct st_v *p);

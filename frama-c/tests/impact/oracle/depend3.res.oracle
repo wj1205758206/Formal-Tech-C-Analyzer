@@ -1,0 +1,38 @@
+[kernel] Parsing tests/impact/depend3.c (with preprocessing)
+[impact] beginning analysis
+[value] Analyzing a complete application starting at main
+[value] Computing initial state
+[value] Initial state computed
+[value:initial-state] Values of globals at initialization
+  ring[0..31] ∈ [--..--]
+[value] computing for function apply <- main.
+  Called from tests/impact/depend3.c:22.
+[value] computing for function find <- apply <- main.
+  Called from tests/impact/depend3.c:18.
+[value] tests/impact/depend3.c:10: entering loop for the first time
+[value] Recording results for find
+[value] Done for function find
+[value] Recording results for apply
+[value] Done for function apply
+[value] computing for function apply <- main.
+  Called from tests/impact/depend3.c:24.
+[value] computing for function find <- apply <- main.
+  Called from tests/impact/depend3.c:18.
+[value] Recording results for find
+[value] Done for function find
+[value] Recording results for apply
+[value] Done for function apply
+[value] Recording results for main
+[value] done for function main
+[pdg] computing for function main
+[from] Computing for function apply
+[from] Computing for function find <-apply
+[from] Done for function find
+[from] Done for function apply
+[pdg] done for function main
+[pdg] computing for function apply
+[pdg] done for function apply
+[impact] impacted statements of stmt(s) 34 are:
+    tests/impact/depend3.c:25 (sid 36): __retres = a + b;
+    tests/impact/depend3.c:25 (sid 45): return __retres;
+[impact] analysis done

@@ -1,0 +1,50 @@
+[kernel] Parsing tests/value/automalloc.i (no preprocessing)
+[value] Analyzing a complete application starting at main
+[value] Computing initial state
+[value] Initial state computed
+[value:initial-state] Values of globals at initialization
+  
+[value] computing for function malloc <- main.
+  Called from tests/value/automalloc.i:14.
+[kernel:annot:missing-spec] tests/value/automalloc.i:14: Warning: 
+  Neither code nor specification for function malloc, generating default assigns from the prototype
+[value] using specification for function malloc
+[value] Done for function malloc
+[value] computing for function realloc <- main.
+  Called from tests/value/automalloc.i:15.
+[kernel:annot:missing-spec] tests/value/automalloc.i:15: Warning: 
+  Neither code nor specification for function realloc, generating default assigns from the prototype
+[value] using specification for function realloc
+[value] Done for function realloc
+[value:alarm] tests/value/automalloc.i:17: Warning: 
+  out of bounds write. assert \valid(buf + 1);
+[kernel] tests/value/automalloc.i:17: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[value] Recording results for main
+[value] done for function main
+[value] tests/value/automalloc.i:17: 
+  assertion 'Value,mem_access' got final status invalid.
+[value] ====== VALUES COMPUTED ======
+[value:final-states] Values at end of function main:
+  test ∈ {0}
+  buf ∈ [--..--]
+[from] Computing for function main
+[from] Computing for function malloc <-main
+[from] Done for function malloc
+[from] Computing for function realloc <-main
+[from] Done for function realloc
+[from] Done for function main
+[from] ====== DEPENDENCIES COMPUTED ======
+  These dependencies hold at termination for the executions that terminate:
+[from] Function malloc:
+  \result FROM s
+[from] Function realloc:
+  test FROM s; test (and SELF)
+  \result FROM s; test
+[from] Function main:
+  NO EFFECTS
+[from] ====== END OF DEPENDENCIES ======
+[inout] Out (internal) for function main:
+    test; buf
+[inout] Inputs for function main:
+    \nothing

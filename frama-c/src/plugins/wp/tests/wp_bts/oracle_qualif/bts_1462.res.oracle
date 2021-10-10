@@ -1,0 +1,28 @@
+# frama-c -wp [...]
+[kernel] Parsing tests/wp_bts/bts_1462.i (no preprocessing)
+[wp] Running WP plugin...
+[wp] Loading driver 'share/wp.driver'
+[wp] Warning: Missing RTE guards
+[wp] 13 goals scheduled
+[wp] [Qed] Goal typed_local_loop_inv_preserved : Valid
+[wp] [Qed] Goal typed_local_loop_inv_established : Valid
+[wp] [Qed] Goal typed_local_loop_assign_part1 : Valid
+[wp] [Qed] Goal typed_local_loop_assign_part2 : Valid
+[wp] [Alt-Ergo] Goal typed_wrong_assert_for_value : Valid
+[wp] [Alt-Ergo] Goal typed_wrong_loop_inv_A_KO_preserved : Unknown
+[wp] [Qed] Goal typed_wrong_loop_inv_A_KO_established : Valid
+[wp] [Qed] Goal typed_wrong_loop_inv_B_preserved : Valid
+[wp] [Qed] Goal typed_wrong_loop_inv_B_established : Valid
+[wp] [Qed] Goal typed_wrong_loop_inv_C_preserved : Valid
+[wp] [Qed] Goal typed_wrong_loop_inv_C_established : Valid
+[wp] [Alt-Ergo] Goal typed_wrong_assert_consequence_of_false_invariant : Valid
+[wp] [Qed] Goal typed_wrong_loop_assign : Valid
+[wp] Proved goals:   12 / 13
+  Qed:            10 
+  Alt-Ergo:        2  (unknown: 1)
+[wp] Report 'tests/wp_bts/bts_1462.i.0.report.json'
+-------------------------------------------------------------
+Functions           WP     Alt-Ergo        Total   Success
+wrong                6      2 (4..16)        9      88.9%
+local                4     -                 4       100%
+-------------------------------------------------------------

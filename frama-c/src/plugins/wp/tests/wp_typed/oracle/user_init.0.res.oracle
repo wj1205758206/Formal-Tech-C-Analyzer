@@ -1,0 +1,133 @@
+# frama-c -wp [...]
+[kernel] Parsing tests/wp_typed/user_init.i (no preprocessing)
+[wp] Running WP plugin...
+[wp] Loading driver 'share/wp.driver'
+[wp] Warning: Missing RTE guards
+------------------------------------------------------------
+  Function init
+------------------------------------------------------------
+
+Goal Post-condition (file tests/wp_typed/user_init.i, line 3) in 'init':
+Let a_1 = shift_sint32(a, 0).
+Assume {
+  Type: is_sint32(i_1) /\ is_sint32(n).
+  (* Goal *)
+  When: (0 <= i) /\ (i < n) /\ is_sint32(i).
+  (* Heap *)
+  Have: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_1, n).
+  (* Pre-condition *)
+  Have: 0 <= n.
+  (* Loop assigns ... *)
+  Have: havoc(Mint_1, Mint_0, a_1, n).
+  (* Invariant 'Partial' *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i_1) ->
+      (Mint_0[shift_sint32(a, i_2)] = v))).
+  (* Invariant 'Range' *)
+  Have: (0 <= i_1) /\ (i_1 <= n).
+  (* Else *)
+  Have: n <= i_1.
+}
+Prove: Mint_0[shift_sint32(a, i)] = v.
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant 'Partial' (file tests/wp_typed/user_init.i, line 9):
+Let a_1 = shift_sint32(a, 0).
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(1 + i).
+  (* Goal *)
+  When: (0 <= i_1) /\ (i_1 <= i) /\ is_sint32(i_1).
+  (* Heap *)
+  Have: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_1, n).
+  (* Pre-condition *)
+  Have: 0 <= n.
+  (* Loop assigns ... *)
+  Have: havoc(Mint_1, Mint_0, a_1, n).
+  (* Invariant 'Partial' *)
+  Have: forall i_2 : Z. ((0 <= i_2) -> ((i_2 < i) ->
+      (Mint_0[shift_sint32(a, i_2)] = v))).
+  (* Invariant 'Range' *)
+  Have: (0 <= i) /\ (i <= n).
+  (* Then *)
+  Have: i < n.
+}
+Prove: Mint_0[shift_sint32(a, i) <- v][shift_sint32(a, i_1)] = v.
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant 'Partial' (file tests/wp_typed/user_init.i, line 9):
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Preservation of Invariant 'Range' (file tests/wp_typed/user_init.i, line 8):
+Let a_1 = shift_sint32(a, 0).
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n) /\ is_sint32(1 + i).
+  (* Heap *)
+  Have: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_1, n).
+  (* Pre-condition *)
+  Have: 0 <= n.
+  (* Loop assigns ... *)
+  Have: havoc(Mint_0, Mint_1, a_1, n).
+  (* Invariant 'Partial' *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (Mint_1[shift_sint32(a, i_1)] = v))).
+  (* Invariant 'Range' *)
+  Have: (0 <= i) /\ (i <= n).
+  (* Then *)
+  Have: i < n.
+}
+Prove: (-1) <= i.
+
+------------------------------------------------------------
+
+Goal Establishment of Invariant 'Range' (file tests/wp_typed/user_init.i, line 8):
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Loop assigns (file tests/wp_typed/user_init.i, line 10) (1/2):
+Prove: true.
+
+------------------------------------------------------------
+
+Goal Loop assigns (file tests/wp_typed/user_init.i, line 10) (2/2):
+Effect at line 12
+Let a_1 = shift_sint32(a, 0).
+Let a_2 = shift_sint32(a, i).
+Assume {
+  Type: is_sint32(i) /\ is_sint32(n).
+  (* Goal *)
+  When: !invalid(Malloc_0, a_2, 1).
+  (* Heap *)
+  Have: (region(a.base) <= 0) /\ linked(Malloc_0).
+  (* Pre-condition *)
+  Have: valid_rw(Malloc_0, a_1, n).
+  (* Pre-condition *)
+  Have: 0 <= n.
+  (* Loop assigns ... *)
+  Have: havoc(Mint_0, Mint_1, a_1, n).
+  (* Invariant 'Partial' *)
+  Have: forall i_1 : Z. ((0 <= i_1) -> ((i_1 < i) ->
+      (Mint_1[shift_sint32(a, i_1)] = v))).
+  (* Invariant 'Range' *)
+  Have: (0 <= i) /\ (i <= n).
+  (* Then *)
+  Have: i < n.
+}
+Prove: included(a_2, 1, a_1, n).
+
+------------------------------------------------------------
+
+Goal Assigns (file tests/wp_typed/user_init.i, line 4) in 'init':
+Effect at line 12
+Prove: true.
+
+------------------------------------------------------------

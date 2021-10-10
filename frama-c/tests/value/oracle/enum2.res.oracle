@@ -1,0 +1,72 @@
+[kernel] Parsing tests/value/enum2.c (with preprocessing)
+[value] Analyzing a complete application starting at main
+[value] Computing initial state
+[value] Initial state computed
+[value:initial-state] Values of globals at initialization
+  must_be_one ∈ {0}
+  must_be_zero ∈ {0}
+[value] computing for function enum1_sgn1_inf_sgn0 <- main.
+  Called from tests/value/enum2.c:33.
+[value] tests/value/enum2.c:27: Frama_C_show_each_enum1_sgn1_inf_sgn0: {0}
+[value] Recording results for enum1_sgn1_inf_sgn0
+[value] Done for function enum1_sgn1_inf_sgn0
+[value] computing for function enum1_sgn1_positif <- main.
+  Called from tests/value/enum2.c:34.
+[value] computing for function f <- enum1_sgn1_positif <- main.
+  Called from tests/value/enum2.c:21.
+[value] Recording results for f
+[value] Done for function f
+[value] tests/value/enum2.c:22: Frama_C_show_each_enum1_sgn1_positif: {1}
+[value] Recording results for enum1_sgn1_positif
+[value] Done for function enum1_sgn1_positif
+[value] tests/value/enum2.c:35: Frama_C_show_each_sizeof_enum1: {8}
+[value] Recording results for main
+[value] done for function main
+[value] ====== VALUES COMPUTED ======
+[value:final-states] Values at end of function enum1_sgn1_inf_sgn0:
+  res ∈ {0}
+[value:final-states] Values at end of function f:
+  y ∈ {2557891634}
+[value:final-states] Values at end of function enum1_sgn1_positif:
+  res ∈ {1}
+[value:final-states] Values at end of function main:
+  must_be_one ∈ {1}
+  must_be_zero ∈ {0}
+  res ∈ {8}
+[from] Computing for function enum1_sgn1_inf_sgn0
+[from] Done for function enum1_sgn1_inf_sgn0
+[from] Computing for function f
+[from] Done for function f
+[from] Computing for function enum1_sgn1_positif
+[from] Done for function enum1_sgn1_positif
+[from] Computing for function main
+[from] Done for function main
+[from] ====== DEPENDENCIES COMPUTED ======
+  These dependencies hold at termination for the executions that terminate:
+[from] Function enum1_sgn1_inf_sgn0:
+  \result FROM \nothing
+[from] Function f:
+  \result FROM x
+[from] Function enum1_sgn1_positif:
+  \result FROM \nothing
+[from] Function main:
+  must_be_one FROM \nothing
+  must_be_zero FROM \nothing
+  \result FROM \nothing
+[from] ====== END OF DEPENDENCIES ======
+[inout] Out (internal) for function enum1_sgn1_inf_sgn0:
+    res
+[inout] Inputs for function enum1_sgn1_inf_sgn0:
+    \nothing
+[inout] Out (internal) for function f:
+    y
+[inout] Inputs for function f:
+    \nothing
+[inout] Out (internal) for function enum1_sgn1_positif:
+    res; tmp
+[inout] Inputs for function enum1_sgn1_positif:
+    \nothing
+[inout] Out (internal) for function main:
+    must_be_one; must_be_zero; res
+[inout] Inputs for function main:
+    \nothing

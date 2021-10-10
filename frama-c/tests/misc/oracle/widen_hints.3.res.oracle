@@ -1,0 +1,97 @@
+[kernel] Parsing tests/misc/widen_hints.c (with preprocessing)
+[value:widen-hints] computing global widen hints
+[value:widen-hints] tests/misc/widen_hints.c:79: 
+  adding global hint from annotation: for all variables, {88} (for all statements)
+[value:widen-hints] tests/misc/widen_hints.c:71: 
+  adding hint from annotation: a, {87} (for all statements)
+[value:widen-hints] tests/misc/widen_hints.c:87: 
+  adding hint from annotation: ss, {87} (for all statements)
+[value] Analyzing a complete application starting at main
+[value] Computing initial state
+[value] Initial state computed
+[value:initial-state] Values of globals at initialization
+  x ∈ {9}
+  not_const ∈ {42}
+[value:widen-hints] tests/misc/widen_hints.c:72: 
+  computing dynamic hints for statement 36
+[value] tests/misc/widen_hints.c:72: entering loop for the first time
+[value] tests/misc/widen_hints.c:73: entering loop for the first time
+[value:widen-hints] tests/misc/widen_hints.c:80: 
+  computing dynamic hints for statement 50
+[value] computing for function f <- main.
+  Called from tests/misc/widen_hints.c:80.
+[value] tests/misc/widen_hints.c:41: entering loop for the first time
+[value] tests/misc/widen_hints.c:42: entering loop for the first time
+[value] Recording results for f
+[value] Done for function f
+[value:widen-hints] tests/misc/widen_hints.c:88: 
+  computing dynamic hints for statement 52
+[value] tests/misc/widen_hints.c:88: entering loop for the first time
+[value] tests/misc/widen_hints.c:89: entering loop for the first time
+[value:widen-hints] tests/misc/widen_hints.c:97: 
+  computing dynamic hints for statement 70
+[value:widen-hints] tests/misc/widen_hints.c:97: 
+  adding new base due to dynamic widen hint: ip, {87}
+[value] tests/misc/widen_hints.c:97: entering loop for the first time
+[value] tests/misc/widen_hints.c:98: entering loop for the first time
+[value:widen-hints] tests/misc/widen_hints.c:107: 
+  computing dynamic hints for statement 89
+[value:widen-hints] tests/misc/widen_hints.c:107: 
+  adding new base due to dynamic widen hint: ip2, {87}
+[value] tests/misc/widen_hints.c:107: entering loop for the first time
+[value] tests/misc/widen_hints.c:108: entering loop for the first time
+[value] tests/misc/widen_hints.c:116: entering loop for the first time
+[value:widen-hints] tests/misc/widen_hints.c:118: 
+  computing dynamic hints for statement 113
+[value:widen-hints] tests/misc/widen_hints.c:118: 
+  adding new base due to dynamic widen hint: iarray, {87}
+[value] tests/misc/widen_hints.c:118: entering loop for the first time
+[value] tests/misc/widen_hints.c:123: entering loop for the first time
+[value] computing for function using_dynamic_global <- main.
+  Called from tests/misc/widen_hints.c:124.
+[value:widen-hints] tests/misc/widen_hints.c:58: 
+  computing dynamic hints for statement 22
+[value:widen-hints] tests/misc/widen_hints.c:58: 
+  adding new base due to dynamic widen hint: outer_i, {87}
+[value] tests/misc/widen_hints.c:58: entering loop for the first time
+[value] Recording results for using_dynamic_global
+[value] Done for function using_dynamic_global
+[value] computing for function using_dynamic_global <- main.
+  Called from tests/misc/widen_hints.c:124.
+[value] Recording results for using_dynamic_global
+[value] Done for function using_dynamic_global
+[value] computing for function using_dynamic_global <- main.
+  Called from tests/misc/widen_hints.c:124.
+[value] Recording results for using_dynamic_global
+[value] Done for function using_dynamic_global
+[value] computing for function using_dynamic_global <- main.
+  Called from tests/misc/widen_hints.c:124.
+[value] Recording results for using_dynamic_global
+[value] Done for function using_dynamic_global
+[value] Recording results for main
+[value] done for function main
+[value] ====== VALUES COMPUTED ======
+[value:final-states] Values at end of function f:
+  m ∈ {10}
+  n ∈ {43}
+  t[0..87] ∈ {1} or UNINITIALIZED
+   [88..99] ∈ UNINITIALIZED
+  __retres ∈ {0}
+[value:final-states] Values at end of function using_dynamic_global:
+  b ∈ [0..88]
+[value:final-states] Values at end of function main:
+  m ∈ {10}
+  n ∈ {43}
+  ss.i ∈ {87; 88}
+    .d ∈ UNINITIALIZED
+  ip ∈ {87; 88}
+  p ∈ {{ &ip }}
+  ip2 ∈ {87; 88}
+  p2 ∈ {{ &ip2 }}
+  pp ∈ {{ &p2 }}
+  iarray[0] ∈ {0}
+        [1].i ∈ {87; 88}
+  piarray[0] ∈ {{ &iarray[0] }}
+         [1] ∈ {{ &iarray[1] }}
+  outer_i ∈ {87}
+  __retres ∈ {0}
