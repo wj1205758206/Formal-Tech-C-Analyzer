@@ -81,12 +81,12 @@ opam install --deps-only frama-c
 
 可检查C代码文件中常见的运行时错误，比如除零异常、内存访问越界、整型数据溢出等错误
 
-![image-20211010092126277](C:\Users\Jian\AppData\Roaming\Typora\typora-user-images\image-20211010092126277.png)
+![image-20211010092651940](https://user-images.githubusercontent.com/52147760/136679442-3358a235-16a5-4da1-9e71-4bfb041ecf03.png)
 
 执行`frama-c -metrics C:/Formal-Tech-C-Analyzer/test/max_seq.c`命令
 
 对C代码文件进行度量分析，包括统计全局变量的数量、if/while循环语句的数量、函数调用以及指针解引用等相关度量分析。
 
-![image-20211010092651940](C:\Users\Jian\AppData\Roaming\Typora\typora-user-images\image-20211010092651940.png)
+![image-20211010092631866](https://user-images.githubusercontent.com/52147760/136679461-bfe6827a-b7d5-473d-b2d0-7e2bb19c88d3.png)
 
 除外之外还有其他对C代码进行静态分析验证的功能，不再一一展示。这款基于形式化规约验证工具，通过在C代码中插入规范的形式化语言，自动的进行对C代码的规约验证。
